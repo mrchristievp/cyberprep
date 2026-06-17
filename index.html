@@ -6,23 +6,23 @@
 <title>AP Cybersecurity — Units 4 &amp; 5 Study Suite</title>
 <style>
 :root{
-  --color-background-primary:#ffffff;
-  --color-background-secondary:#f4f2ec;
-  --color-background-tertiary:#faf9f5;
-  --color-background-info:#E6F1FB;
-  --color-background-danger:#FCEBEB;
-  --color-background-success:#E1F5EE;
-  --color-background-warning:#FAEEDA;
-  --color-text-primary:#1a1a18;
-  --color-text-secondary:#5F5E5A;
-  --color-text-tertiary:#888780;
-  --color-text-info:#185FA5;
-  --color-text-danger:#A32D2D;
-  --color-text-success:#0F6E56;
-  --color-text-warning:#854F0B;
-  --color-border-tertiary:rgba(0,0,0,0.15);
-  --color-border-secondary:rgba(0,0,0,0.30);
-  --color-border-primary:rgba(0,0,0,0.40);
+  --color-background-primary:#262624;
+  --color-background-secondary:#2f2f2c;
+  --color-background-tertiary:#1a1a18;
+  --color-background-info:#0a3a66;
+  --color-background-danger:#5a1717;
+  --color-background-success:#0a3d31;
+  --color-background-warning:#4a2a07;
+  --color-text-primary:#f5f4ef;
+  --color-text-secondary:#b4b2a9;
+  --color-text-tertiary:#8a8980;
+  --color-text-info:#85B7EB;
+  --color-text-danger:#F09595;
+  --color-text-success:#5DCAA5;
+  --color-text-warning:#EF9F27;
+  --color-border-tertiary:rgba(255,255,255,0.14);
+  --color-border-secondary:rgba(255,255,255,0.28);
+  --color-border-primary:rgba(255,255,255,0.42);
   --color-border-info:#378ADD;
   --color-border-danger:#E24B4A;
   --color-border-success:#1D9E75;
@@ -31,27 +31,6 @@
   --border-radius-lg:12px;
   --font-sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --font-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
-}
-@media(prefers-color-scheme:dark){
-  :root{
-    --color-background-primary:#262624;
-    --color-background-secondary:#2f2f2c;
-    --color-background-tertiary:#1c1c1a;
-    --color-background-info:#042C53;
-    --color-background-danger:#501313;
-    --color-background-success:#04342C;
-    --color-background-warning:#412402;
-    --color-text-primary:#f5f4ef;
-    --color-text-secondary:#b4b2a9;
-    --color-text-tertiary:#888780;
-    --color-text-info:#85B7EB;
-    --color-text-danger:#F09595;
-    --color-text-success:#5DCAA5;
-    --color-text-warning:#EF9F27;
-    --color-border-tertiary:rgba(255,255,255,0.15);
-    --color-border-secondary:rgba(255,255,255,0.30);
-    --color-border-primary:rgba(255,255,255,0.40);
-  }
 }
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
@@ -76,28 +55,23 @@ header p{font-size:14px;color:var(--color-text-secondary);margin:0 0 1.5rem;}
 .opt:disabled{cursor:default;}
 .mi{padding:9px 12px;margin:4px 0;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);cursor:pointer;font-size:13px;color:var(--color-text-primary);line-height:1.4;font-family:var(--font-sans);}
 .mi:hover{border-color:var(--color-border-primary);}
-.mi.msel{border-color:#378ADD;background:#E6F1FB;color:#0C447C;}
-.mi.mdone{border-color:#0F6E56;background:#E1F5EE;color:#085041;cursor:default;pointer-events:none;}
-.mi.mbad{border-color:#993C1D;background:#FAECE7;color:#712B13;}
+.mi.msel{border-color:#85B7EB;background:#042C53;color:#B5D4F4;}
+.mi.mdone{border-color:#5DCAA5;background:#04342C;color:#9FE1CB;cursor:default;pointer-events:none;}
+.mi.mbad{border-color:#F0997B;background:#4A1B0C;color:#F5C4B3;}
 .pstep{display:block;width:100%;text-align:left;padding:9px 12px;margin:5px 0;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);cursor:pointer;font-size:13px;color:var(--color-text-primary);font-family:var(--font-sans);line-height:1.4;}
 .pstep:hover{border-color:var(--color-border-primary);background:var(--color-background-secondary);}
 .hint-box{background:var(--color-background-warning);border-left:3px solid #BA7517;padding:10px 14px;margin-bottom:8px;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;font-size:13px;line-height:1.5;}
 .expl-box{background:var(--color-background-success);border-left:3px solid #0F6E56;padding:12px 14px;margin-top:0.75rem;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;font-size:13px;line-height:1.6;}
 .card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.5rem 1.75rem;}
-@media(prefers-color-scheme:dark){
-.mi.msel{border-color:#85B7EB;background:#042C53;color:#B5D4F4;}
-.mi.mdone{border-color:#5DCAA5;background:#04342C;color:#9FE1CB;}
-.mi.mbad{border-color:#F0997B;background:#4A1B0C;color:#F5C4B3;}
-}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
 <h1>AP Cybersecurity — Units 4 &amp; 5 Study Suite</h1>
-<p>Flashcards, quiz, matching, Parsons problems, a log-analysis lab, and applied scenarios. Filter the term modes by CompTIA Security+ domain.</p>
+<p>Flashcards, quiz, matching, Parsons problems, an FRQ-style log-analysis lab, and applied scenarios. Filter the term modes by CompTIA Security+ domain.</p>
 </header>
-<h2 class="sr-only">AP Cybersecurity study suite filtered by CompTIA Security+ domains — six interactive modes</h2>
+<h2 class="sr-only">AP Cybersecurity study suite — six modes including an FRQ-style multi-part log analysis lab</h2>
 <div id="app"></div>
 </div>
 <script>
@@ -164,150 +138,135 @@ const T=[
   {t:'Honeypot',d:'A fake file that appears to contain valuable data; any access is treated as an indicator of malicious activity.',dom:4},
   {t:'Data loss prevention (DLP)',d:'A costly third-party service monitoring data access, usage, and transmission organization-wide.',dom:4},
 ];
-
 const PARSONS=[
   {title:'Password hashing',dom:1,
    desc:'Arrange these steps in order: how a system safely stores a user\'s password when they create an account.',
-   correct:[
-    'User creates an account and enters a new password',
-    'System generates a unique random salt for this user',
-    'Salt is combined with the user\'s password',
-    'The combined string is processed by a cryptographic hash function',
-    'The resulting hash (not the password) and the salt are stored in the database',
-    'When the user logs in later, they enter their password again',
-    'System retrieves their stored salt, combines it with the entered password, and hashes it',
-    'The new hash is compared to the stored hash — matching hashes means the user is authenticated'
-   ],
-   hints:['What does the user do first, before the system does anything?','The salt must be created before it can be combined with anything.','Hashing only happens after salt + password are combined.','What gets stored — the password itself, or the output of the hash function?']
-  },
+   correct:['User creates an account and enters a new password','System generates a unique random salt for this user','Salt is combined with the user\'s password','The combined string is processed by a cryptographic hash function','The resulting hash (not the password) and the salt are stored in the database','When the user logs in later, they enter their password again','System retrieves their stored salt, combines it with the entered password, and hashes it','The new hash is compared to the stored hash — matching hashes means the user is authenticated'],
+   hints:['What does the user do first, before the system does anything?','The salt must be created before it can be combined with anything.','Hashing only happens after salt + password are combined.','What gets stored — the password itself, or the output of the hash function?']},
   {title:'Rainbow table attack',dom:2,
    desc:'Arrange these steps in order: how an adversary executes a rainbow table attack.',
-   correct:[
-    'Adversary steals a user:password hash database from a target organization',
-    'Adversary compiles a large list of common or likely plaintext passwords',
-    'Each candidate password is hashed using the same algorithm as the target database',
-    'A rainbow table is built pairing each plaintext password with its computed hash',
-    'The table is sorted by hash value to enable fast searching',
-    'Stolen hashes from the database are looked up in the rainbow table',
-    'Matching hash reveals the plaintext password, which is then used to log in'
-   ],
-   hints:['The adversary can\'t attack anything without data — what do they need to steal first?','The rainbow table has to be built before it can be searched.','Why would you sort the table by hash value rather than by password?']
-  },
+   correct:['Adversary steals a user:password hash database from a target organization','Adversary compiles a large list of common or likely plaintext passwords','Each candidate password is hashed using the same algorithm as the target database','A rainbow table is built pairing each plaintext password with its computed hash','The table is sorted by hash value to enable fast searching','Stolen hashes from the database are looked up in the rainbow table','Matching hash reveals the plaintext password, which is then used to log in'],
+   hints:['The adversary can\'t attack anything without data — what do they need to steal first?','The rainbow table has to be built before it can be searched.','Why would you sort the table by hash value rather than by password?']},
   {title:'SQL injection attack',dom:2,
    desc:'Arrange these steps in order: how an SQL injection attack unfolds against a web application.',
-   correct:[
-    'Web application presents a login form with an open-ended username input field',
-    'Adversary enters SQL control characters (e.g., \' OR 1=1 --) into the username field',
-    'Application fails to validate or sanitize the input before using it',
-    'Application inserts the malicious input directly into a SQL query',
-    'Database executes the manipulated query without knowing the input was malicious',
-    'Query logic is altered — returns all records or modifies data instead of behaving as intended',
-    'Adversary gains unauthorized access to data or corrupts the database'
-   ],
-   hints:['There has to be an input field before anything can be injected into it.','The lack of data validation is what makes the attack possible — where does that failure appear in the chain?','The database just executes whatever query it receives — it doesn\'t check where the input came from.']
-  },
+   correct:['Web application presents a login form with an open-ended username input field','Adversary enters SQL control characters (e.g., \' OR 1=1 --) into the username field','Application fails to validate or sanitize the input before using it','Application inserts the malicious input directly into a SQL query','Database executes the manipulated query without knowing the input was malicious','Query logic is altered — returns all records or modifies data instead of behaving as intended','Adversary gains unauthorized access to data or corrupts the database'],
+   hints:['There has to be an input field before anything can be injected into it.','The lack of data validation is what makes the attack possible — where does that failure appear in the chain?','The database just executes whatever query it receives — it doesn\'t check where the input came from.']},
   {title:'Signature detection',dom:4,
    desc:'Arrange these steps in order: how signature-based anti-malware detects a known threat.',
-   correct:[
-    'Security researchers discover a new piece of malware in the wild',
-    'Researchers extract a unique identifier (signature) from the malware\'s code',
-    'The signature is added to the anti-malware vendor\'s signature database',
-    'An updated signature database is pushed to devices running the software',
-    'Anti-malware software periodically scans files on the device',
-    'Each file is compared against signatures in the database',
-    'If a match is found, the file is quarantined and flagged for removal'
-   ],
-   hints:['Signatures can\'t be extracted from malware that hasn\'t been found yet — what happens first?','The database update must reach the device before a scan can use the new signature.','Quarantine is the final step — it only happens after a confirmed match.']
-  }
+   correct:['Security researchers discover a new piece of malware in the wild','Researchers extract a unique identifier (signature) from the malware\'s code','The signature is added to the anti-malware vendor\'s signature database','An updated signature database is pushed to devices running the software','Anti-malware software periodically scans files on the device','Each file is compared against signatures in the database','If a match is found, the file is quarantined and flagged for removal'],
+   hints:['Signatures can\'t be extracted from malware that hasn\'t been found yet — what happens first?','The database update must reach the device before a scan can use the new signature.','Quarantine is the final step — it only happens after a confirmed match.']}
 ];
-
-const LOGS=[
-  {title:'Scenario 1',
-   desc:'You are a forensic analyst reviewing authentication logs from a corporate server. Examine the log and answer below.',
-   cols:['Time','Status','User','Source IP','Notes'],
-   entries:[
-    {t:'14:31:50',s:'SUCCESS',u:'alee',ip:'10.0.1.12',n:'—'},
-    {t:'14:32:01',s:'FAIL',u:'jsmith',ip:'203.0.113.45',n:'attempt 1'},
-    {t:'14:32:03',s:'FAIL',u:'jsmith',ip:'203.0.113.45',n:'attempt 2'},
-    {t:'14:32:05',s:'FAIL',u:'jsmith',ip:'203.0.113.45',n:'attempt 3'},
-    {t:'14:32:07',s:'FAIL',u:'jsmith',ip:'203.0.113.45',n:'attempt 4'},
-    {t:'14:32:09',s:'FAIL',u:'jsmith',ip:'203.0.113.45',n:'attempt 5'},
-    {t:'14:32:11',s:'FAIL',u:'jsmith',ip:'203.0.113.45',n:'attempt 6'},
-    {t:'14:32:13',s:'FAIL',u:'jsmith',ip:'203.0.113.45',n:'attempt 7'},
-    {t:'14:33:02',s:'SUCCESS',u:'rgarcia',ip:'10.0.1.88',n:'—'},
-   ],
-   sus:[1,2,3,4,5,6,7],
-   q:'What type of password attack do rows 2–8 indicate?',
-   opts:['Brute force / dictionary attack','Password spraying','Credential stuffing','No attack — normal login failures'],
-   ans:0,
-   hints:['Look at the username column for rows 2–8. Is it always the same person?','Now look at the source IP — is it always the same external address?','One account targeted repeatedly with many attempts from a single IP = single-account targeting.'],
-   expl:'Rows 2–8 show the same user (jsmith) failing 7 times in rapid succession from the same external IP. This is a brute force or dictionary attack — an automated tool cycling through passwords against one account. Rows 1 and 9 are normal successful logins from internal IPs.'
-  },
-  {title:'Scenario 2',
-   desc:'Review this authentication log from a company email server captured at 9:15 AM on a Monday.',
-   cols:['Time','Status','User','Source IP','Password tried'],
-   entries:[
-    {t:'09:14:58',s:'SUCCESS',u:'nwong',ip:'10.0.2.31',n:'—'},
-    {t:'09:15:00',s:'FAIL',u:'agarcia',ip:'198.51.100.22',n:'Summer2024!'},
-    {t:'09:15:02',s:'FAIL',u:'bwilson',ip:'198.51.100.22',n:'Summer2024!'},
-    {t:'09:15:04',s:'FAIL',u:'cmiller',ip:'198.51.100.22',n:'Summer2024!'},
-    {t:'09:15:06',s:'FAIL',u:'djones',ip:'198.51.100.22',n:'Summer2024!'},
-    {t:'09:15:08',s:'FAIL',u:'etaylor',ip:'198.51.100.22',n:'Summer2024!'},
-    {t:'09:15:10',s:'FAIL',u:'fmartinez',ip:'198.51.100.22',n:'Summer2024!'},
-    {t:'09:16:12',s:'SUCCESS',u:'lwebb',ip:'10.0.2.19',n:'—'},
-   ],
-   sus:[1,2,3,4,5,6],
-   q:'What type of attack does this log indicate?',
-   opts:['Brute force / dictionary attack','Password spraying','Credential stuffing','No attack — employees forgot their passwords on Monday'],
-   ans:1,
-   hints:['Look at rows 2–7. How many different usernames appear?','Now look at the "Password tried" column — what\'s identical across all failing rows?','Many different accounts, one common password, one source IP, all within seconds = ?'],
-   expl:'Rows 2–7 show six different accounts tried with the exact same password ("Summer2024!") from a single external IP in under 12 seconds. This is password spraying — trying one common seasonal password across many accounts. The attacker avoids lockout on any single account by only trying once per user.'
-  },
-  {title:'Scenario 3',
-   desc:'You are reviewing authentication logs for a set of network switches and routers at a manufacturing facility.',
-   cols:['Time','Status','User tried','Source IP','Password tried'],
-   entries:[
-    {t:'22:44:01',s:'FAIL',u:'admin',ip:'172.16.0.99',n:'admin'},
-    {t:'22:44:03',s:'FAIL',u:'admin',ip:'172.16.0.99',n:'password'},
-    {t:'22:44:05',s:'FAIL',u:'root',ip:'172.16.0.99',n:'root'},
-    {t:'22:44:07',s:'FAIL',u:'admin',ip:'172.16.0.99',n:'1234'},
-    {t:'22:44:09',s:'FAIL',u:'guest',ip:'172.16.0.99',n:'guest'},
-    {t:'22:44:11',s:'FAIL',u:'cisco',ip:'172.16.0.99',n:'cisco'},
-    {t:'22:44:13',s:'FAIL',u:'admin',ip:'172.16.0.99',n:'Admin123!'},
-    {t:'22:45:00',s:'SUCCESS',u:'sysadmin',ip:'10.0.5.2',n:'—'},
-   ],
-   sus:[0,1,2,3,4,5,6],
-   q:'What type of attack do rows 1–7 indicate?',
-   opts:['Brute force / dictionary attack','Password spraying','Credential stuffing','A legitimate admin doing routine maintenance'],
-   ans:2,
-   hints:['Look at the usernames: admin, root, guest, cisco. What do these have in common?','Now look at the passwords: admin, root, guest, cisco. See the pattern?','These are factory-default username/password pairs for network equipment.'],
-   expl:'Rows 1–7 show factory-default credential pairs (admin/admin, root/root, guest/guest, cisco/cisco) tried in rapid succession from the same IP. This is credential stuffing targeting devices that may never have had default credentials changed. Note how it differs from brute force: many different username/password combos, not many passwords for one account.'
-  },
-  {title:'Scenario 4',
-   desc:'Review the login history for user mthompson. This account normally logs in from the Seattle office (IP range 10.0.1.x) between 8–9 AM.',
-   cols:['Date/Time','Status','User','Source IP','Location'],
-   entries:[
-    {t:'Mar 13 08:22',s:'SUCCESS',u:'mthompson',ip:'10.0.1.55',n:'Seattle, US'},
-    {t:'Mar 14 08:31',s:'SUCCESS',u:'mthompson',ip:'10.0.1.55',n:'Seattle, US'},
-    {t:'Mar 14 08:45',s:'FAIL',   u:'mthompson',ip:'10.0.1.55',n:'Seattle, US'},
-    {t:'Mar 14 08:46',s:'SUCCESS',u:'mthompson',ip:'10.0.1.55',n:'Seattle, US'},
-    {t:'Mar 15 02:47',s:'SUCCESS',u:'mthompson',ip:'91.200.15.44',n:'Moscow, RU'},
-    {t:'Mar 15 09:01',s:'SUCCESS',u:'mthompson',ip:'10.0.1.55',n:'Seattle, US'},
-   ],
-   sus:[4],
-   q:'Which entry is the most suspicious, and what type of IoC does it represent?',
-   opts:[
-    'Row 3 (FAIL on Mar 14) — indicates a brute force attempt in progress',
-    'Row 5 (2:47 AM login from Moscow) — behavior-based IoC suggesting compromised credentials',
-    'Row 6 (login after Moscow) — impossible travel means both logins are fraudulent',
-    'No entry is suspicious — international travel and off-hours logins are normal'
-   ],
-   ans:1,
-   hints:['Compare the Location column. Which row is completely different from all others?','Now look at the time — 2:47 AM. How does that compare to mthompson\'s usual login window?','Unusual location + unusual time in an auth log = behavior-based IoC per 4.4.A.6.'],
-   expl:'Row 5 is the standout: a 2:47 AM login from Moscow, far outside mthompson\'s normal 8–9 AM window from Seattle. This is a behavior-based IoC — unusual login time and location — suggesting credentials may be compromised. Row 3\'s failed login followed immediately by success (row 4) is likely just a typo, not an attack.'
-  }
+const LABS=[
+ {tab:'Case 1',
+  intro:'You are a forensic analyst at Dynamic Manufacturing. Reviewing authentication logs from a Windows file server (FS-01) on the breached business-office network, work through each part. Row numbers are shown for reference.',
+  log:{cols:['#','Time','User','Result','Source IP'],resultCol:3,susRows:[1,2,3,4,5,6,7,8],
+   rows:[
+    ['1','02:59:10','mreyes','SUCCESS','10.12.4.20'],
+    ['2','03:14:02','admin','FAIL','185.220.101.5'],
+    ['3','03:14:05','admin','FAIL','185.220.101.5'],
+    ['4','03:14:08','admin','FAIL','185.220.101.5'],
+    ['5','03:14:11','admin','FAIL','185.220.101.5'],
+    ['6','03:14:14','admin','FAIL','185.220.101.5'],
+    ['7','03:14:17','admin','SUCCESS','185.220.101.5'],
+    ['8','03:21:40','admin','SUCCESS','185.220.101.5'],
+    ['9','03:25:09','svc_sql','SUCCESS','185.220.101.5'],
+   ]},
+  parts:[
+   {type:'mc',
+    q:'Examine rows 2–7. What does this sequence indicate?',
+    opts:['An online brute-force (or dictionary) attack on the admin account that succeeded at row 7','Password spraying — one password tried across many different accounts','Credential stuffing using default username/password pairs','Normal administrator activity from a remote office'],
+    ans:0,
+    hints:['How many distinct usernames appear in rows 2–7 — one, or many?','The attempts arrive every ~3 seconds from a single external IP. Automated or human?','Row 7 flips from FAIL to SUCCESS. What just happened to the admin account?'],
+    expl:'Rows 2–6 are six rapid failed logins on one account (admin) from a single external IP — the signature of an online brute-force / dictionary attack. Row 7 is the breach: the same IP logs in successfully. Only one account is targeted (not many), so it is not password spraying; the credentials are not default pairs, so it is not credential stuffing.'},
+   {type:'match',
+    q:'Match each log observation to what it represents.',
+    pairs:[
+     {l:'Rows 2–6: six FAILs on "admin" in 15 seconds',r:'Online brute-force attack in progress'},
+     {l:'Row 7: SUCCESS from the same IP',r:'The moment of compromise (confidentiality breach)'},
+     {l:'All attempts ~03:14 from an external IP',r:'Behavior-based IoC: unusual time and location'},
+     {l:'Row 1: mreyes login from 10.12.4.20',r:'Normal internal baseline activity'},
+    ],
+    hints:['One row is legitimate — which user logs in from an internal 10.x address?','The CED lists unusual login times and locations as behavior-based IoCs.','Find the single row where FAIL becomes SUCCESS — that is the compromise.'],
+    expl:'The brute-force burst (rows 2–6), the successful breach (row 7), the off-hours external access (a behavior-based IoC), and the lone legitimate internal login (row 1) each map to a distinct classification used in IoC analysis.'},
+   {type:'mc',
+    q:'Which response best addresses this incident?',
+    opts:['Force a password reset for "admin", enable account lockout after 3–5 failed attempts, and require MFA','Block only the source IP 185.220.101.5 at the firewall and take no further action','Increase the maximum password age so the password changes sooner','Nothing — the successful login shows the system is working'],
+    ans:0,
+    hints:['The attacker already knows the admin password. Will blocking one IP stop them reusing it elsewhere?','CED login settings: account lockout limits repeated guessing; MFA defeats a stolen password.','Address both the compromised credential AND the weakness that allowed unlimited guesses.'],
+    expl:'The credential is already compromised, so it must be reset. Account lockout (3–5 attempts per the CED) stops unlimited online guessing, and MFA means a stolen password alone is no longer enough. Blocking just the IP is trivially bypassed by switching IPs, and password age does nothing against an active attacker.'},
+  ]},
+ {tab:'Case 2',
+  intro:'The manufacturing network logs both the Source IP and the Source MAC (hardware) address of every connecting device. You are reviewing the authentication log for a PLC controller (PLC-7). The team suspects an adversary is trying to evade IP-based detection.',
+  log:{cols:['#','Time','User tried','Result','Source IP','Source MAC'],resultCol:3,susRows:[1,2,3,4,5],
+   rows:[
+    ['1','08:00:11','operator','SUCCESS','10.30.1.10','00:1A:2B:3C:4D:5E'],
+    ['2','23:41:02','admin','FAIL','10.30.1.88','00:1B:44:11:3A:B7'],
+    ['3','23:41:05','root','FAIL','10.30.1.91','00:1B:44:11:3A:B7'],
+    ['4','23:41:09','plcadmin','FAIL','10.30.1.105','00:1B:44:11:3A:B7'],
+    ['5','23:41:13','operator','FAIL','10.30.1.140','00:1B:44:11:3A:B7'],
+    ['6','23:41:18','admin','FAIL','10.30.1.88','00:1B:44:11:3A:B7'],
+    ['7','08:05:20','operator','SUCCESS','10.30.1.10','00:1A:2B:3C:4D:5E'],
+   ]},
+  parts:[
+   {type:'mc',
+    q:'Rows 2–6 come from four different source IP addresses. Why might this NOT be four separate attackers?',
+    opts:['All share one Source MAC (00:1B:44:11:3A:B7), so they come from a single physical device that changed its IP to evade IP-based detection','IP addresses are always more reliable than MAC addresses for identifying a device','The four IPs are on different subnets, so they must be four different people','MAC addresses are randomly generated each session and can be ignored'],
+    ans:0,
+    hints:['Compare the Source MAC column across rows 2–6 — changing or constant?','An IP can be reassigned (DHCP) or set manually; a MAC identifies the physical network card on the local segment.','If the hardware identity is identical but the IP keeps changing, how many devices are really involved?'],
+    expl:'On a local network the Source MAC identifies the physical network interface. Rows 2–6 share one MAC even though the Source IP changes four times — a single device rotating its IP to slip past IP-based rate-limiting and lockout. (MAC addresses can themselves be spoofed, but a constant MAC across rotating IPs still points to one coordinated source.)'},
+   {type:'match',
+    q:'Match each log field or observation to what it tells an analyst.',
+    pairs:[
+     {l:'Source IP address',r:'Easily reassigned or changed — unreliable for tracking one device over time'},
+     {l:'Source MAC address',r:'Identifies the physical network interface on the local segment'},
+     {l:'Four IPs but one MAC (rows 2–6)',r:'A single device rotating its IP to evade detection'},
+     {l:'admin, root, plcadmin, operator each tried once',r:'Password-spraying pattern, outside production hours'},
+    ],
+    hints:['Which identifier changes every time the attacker reconnects?','Which identifier stayed the same and unmasked the single source?','Rows 2–6 try four different accounts once each — what attack does that?'],
+    expl:'IP addresses are layer-3 and reassignable; MAC addresses are layer-2 hardware identifiers tied to the device on the local segment. The constant MAC unmasks the IP rotation, and the spread of usernames at 23:41 is password spraying during off-hours.'},
+   {type:'mc',
+    q:'Because the adversary rotates IPs, which control would most reliably detect or block this device?',
+    opts:['Network Access Control (NAC) / port security that binds the switch port to known MAC addresses','An IP allowlist that permits only specific source IP addresses','Requiring longer passwords on the PLC accounts','Raising the account-lockout threshold to 20 attempts'],
+    ans:0,
+    hints:['The attacker defeats anything keyed purely on IP by changing IP. So an IP allowlist…?','Longer passwords and higher lockout thresholds do not identify the offending device.','Which option keys on the identifier that stayed constant — the MAC?'],
+    expl:'Because the attacker changes IPs at will, IP-based controls are easily bypassed. NAC / port security binds a switch port to authorized MAC addresses, so an unrecognized or known-bad MAC is blocked or flagged regardless of its IP. Password length and lockout tuning neither identify nor stop the specific device.'},
+  ]},
+ {tab:'Case 3',
+  intro:'On the same segment, the device at IP 10.30.1.10 is a known operator workstation that should always present MAC 00:1A:2B:3C:4D:5E. Review its access log, which records the Source MAC for every action.',
+  log:{cols:['#','Time','Device IP','Source MAC','Action','Result'],resultCol:5,susRows:[2,3,4],
+   rows:[
+    ['1','08:02','10.30.1.10','00:1A:2B:3C:4D:5E','login','SUCCESS'],
+    ['2','12:15','10.30.1.10','00:1A:2B:3C:4D:5E','read /recipes','SUCCESS'],
+    ['3','02:30','10.30.1.10','DE:AD:BE:EF:00:01','login','FAIL'],
+    ['4','02:31','10.30.1.10','DE:AD:BE:EF:00:01','login','SUCCESS'],
+    ['5','02:33','10.30.1.10','DE:AD:BE:EF:00:01','copy /recipes/formula.xml','SUCCESS'],
+    ['6','08:05','10.30.1.10','00:1A:2B:3C:4D:5E','login','SUCCESS'],
+   ]},
+  parts:[
+   {type:'mc',
+    q:'IP 10.30.1.10 normally presents MAC 00:1A:2B:3C:4D:5E. At 02:30–02:33 the same IP appears with MAC DE:AD:BE:EF:00:01. What does this most likely indicate?',
+    opts:['A different physical device is using the workstation\'s IP — IP/MAC spoofing or a rogue device impersonating it','The workstation simply received a new IP address from DHCP','The operator upgraded their computer\'s operating system','Two employees share the workstation during the day'],
+    ans:0,
+    hints:['The IP stayed the same; what changed was the hardware (MAC) identity.','A trusted workstation\'s MAC should be stable — a new MAC on its IP at 2:30 AM is suspicious.','Same IP + unexpected MAC = a different device claiming that address.'],
+    expl:'The IP is constant but the MAC — the hardware identity — changed to an unknown value in the early morning. That is the signature of MAC/IP spoofing or a rogue device impersonating the trusted workstation, not a routine DHCP lease or OS upgrade (neither changes the MAC while keeping the IP).'},
+   {type:'match',
+    q:'Classify each row of the log.',
+    pairs:[
+     {l:'Rows 1, 2, 6 (known MAC, business hours)',r:'Normal baseline activity'},
+     {l:'Row 3: FAIL, unknown MAC, 02:30',r:'Behavior-based IoC: unusual time and unknown device'},
+     {l:'Row 4: SUCCESS from the unknown MAC',r:'Unauthorized access — the impersonating device gets in'},
+     {l:'Row 5: copy of /recipes/formula.xml',r:'Sensitive-data exfiltration attempt'},
+    ],
+    hints:['Three rows use the legitimate MAC during the day — those are your baseline.','Which row tries to take proprietary data off the device?','Unusual time + unrecognized device is the textbook behavior-based IoC.'],
+    expl:'Rows 1/2/6 are normal. Row 3 (failed login, unknown MAC, 2:30 AM) is a behavior-based IoC; row 4 is the unauthorized success; row 5 — copying formula.xml from /recipes — is the exfiltration objective. Justifying a row-by-row classification like this is exactly what the FRQ asks for.'},
+   {type:'mc',
+    q:'Which control most directly detects or prevents this spoofing?',
+    opts:['Switch port security binding each port to its expected MAC, with alerts when a known IP presents an unexpected MAC','Forcing the operator to choose a longer password','Disabling logging at 10.30.1.10 to reduce noise','Assigning the workstation a public IP address'],
+    ans:0,
+    hints:['The give-away was a MAC that did not match the IP — what control watches for exactly that?','Password length would not have stopped a device impersonating the IP.','You want an alert when a known IP suddenly presents an unexpected MAC.'],
+    expl:'Port security / NAC binds a port (and IP) to an expected MAC and alerts when an unexpected MAC appears — directly catching this spoofing. Longer passwords do not address device impersonation, disabling logging destroys the evidence that caught it, and a public IP makes exposure worse.'},
+  ]},
 ];
-
 const SCEN=[
   {topic:'Risk assessment',
    ctx:'A water treatment plant uses embedded PLCs to control chemical dosing pumps. These PLCs are remotely accessible via username and password. The vendor has not disclosed any known CVEs for this model, and MFA is not supported by the device.',
@@ -315,48 +274,42 @@ const SCEN=[
    opts:['High — critical infrastructure is always classified as high risk','Moderate — weak authentication on critical systems, but no known exploit reduces likelihood','Low — no known CVE means there is essentially no risk','Cannot be determined — embedded devices are outside the scope of risk assessment'],
    ans:1,
    hints:['Risk = likelihood × impact. Evaluate each dimension separately.','What is the impact if a water treatment plant\'s chemical pumps are compromised? High or low?','No known CVE means exploitation is less certain — what does that do to the likelihood component?'],
-   expl:'Moderate risk. Critical infrastructure (water treatment) means high potential impact. But the absence of a known CVE means exploitation is less certain, reducing the likelihood component. This matches the AP framework\'s illustrative example: pumps accessible via username/password without MFA = moderate risk. High risk requires both high impact AND a highly likely exploit.'
-  },
+   expl:'Moderate risk. Critical infrastructure (water treatment) means high potential impact. But the absence of a known CVE means exploitation is less certain, reducing the likelihood component. This matches the AP framework\'s illustrative example: pumps accessible via username/password without MFA = moderate risk. High risk requires both high impact AND a highly likely exploit.'},
   {topic:'Risk assessment',
    ctx:'An organization\'s email server has not been patched in 6 months. Two months ago, a critical vulnerability (CVSS score 9.8) was published for this email server software, and security researchers confirm active exploitation in the wild.',
    q:'How would you classify the risk level of this configuration?',
    opts:['Low — it hasn\'t been visibly attacked yet','Moderate — the vulnerability exists but may not be discovered by adversaries','High — known critical vulnerability with active exploitation on a sensitive server','Moderate — email servers are not critical infrastructure'],
    ans:2,
    hints:['CVSS 9.8 is near-maximum severity. What does that imply about impact?','"Active exploitation in the wild" — is the likelihood of being attacked high or theoretical?','Email servers handle sensitive communications. Compromise = confidentiality and integrity breach.'],
-   expl:'High risk. A CVSS 9.8 CVE with confirmed active exploitation means likelihood is very high — not theoretical. Email servers store sensitive communications, so impact is also high. This matches the AP framework\'s high-risk example: an unpatched email server with a known critical vulnerability that adversaries are already using.'
-  },
+   expl:'High risk. A CVSS 9.8 CVE with confirmed active exploitation means likelihood is very high — not theoretical. Email servers store sensitive communications, so impact is also high. This matches the AP framework\'s high-risk example: an unpatched email server with a known critical vulnerability that adversaries are already using.'},
   {topic:'Malware identification',
    ctx:'An adversary gains access to an HR system and installs software that silently records every keystroke typed by HR staff. The recorded data is automatically sent to an external server each night. HR staff notice nothing unusual.',
    q:'What type of malware most specifically describes what was installed?',
    opts:['Ransomware','Worm','Keylogger','Logic bomb'],
    ans:2,
    hints:['What is the malware\'s core action — what is it actually doing to the system?','It\'s not encrypting files, not self-replicating, and not waiting for a trigger condition.','The defining behavior is capturing and exfiltrating keystrokes.'],
-   expl:'Keylogger. The malware records keystrokes and exfiltrates them — that is the defining behavior of a keylogger. Ransomware encrypts files for ransom. A worm spreads to other computers without interaction. A logic bomb waits for a trigger condition before activating. Spyware is the broader category; keylogger is the most precise answer here.'
-  },
+   expl:'Keylogger. The malware records keystrokes and exfiltrates them — that is the defining behavior of a keylogger. Ransomware encrypts files for ransom. A worm spreads to other computers without interaction. A logic bomb waits for a trigger condition before activating. Spyware is the broader category; keylogger is the most precise answer here.'},
   {topic:'Access control models',
    ctx:'A government agency assigns every analyst a clearance level (e.g., SECRET). Documents are also labeled by classification level. A SECRET-cleared analyst must be able to read SECRET documents, but must NOT be allowed to copy or write data into UNCLASSIFIED documents — to prevent classified data from leaking downward.',
    q:'Which access control model and specific rule prevents writing to lower-classification objects?',
    opts:['DAC — the document owner sets permissions, so they could block writes','RBAC — job roles control what analysts can read and write','Bell-LaPadula — the Star (*) Security Property (no write down)','RuBAC — time-of-day rules restrict when analysts can write'],
    ans:2,
    hints:['The clearance levels are set by the organization, not by the document owner — which model does that rule out?','The restriction is specifically about WRITING to a LOWER level. Which model has a property for this?','Bell-LaPadula has two properties: Simple Security (no read up) and Star/(*) (no write down). Which applies here?'],
-   expl:'Bell-LaPadula\'s Star (*) Security Property: a subject may not write to an object below their clearance level. This prevents a SECRET-cleared analyst from writing classified data to UNCLASSIFIED documents. The mnemonic is "write up, read down" (WURD). DAC would rely on owner permissions, which is too flexible for government classified environments.'
-  },
+   expl:'Bell-LaPadula\'s Star (*) Security Property: a subject may not write to an object below their clearance level. This prevents a SECRET-cleared analyst from writing classified data to UNCLASSIFIED documents. The mnemonic is "write up, read down" (WURD). DAC would rely on owner permissions, which is too flexible for government classified environments.'},
   {topic:'Application attacks',
    ctx:'On a community forum, a user posts what appears to be a technical question. Their post contains hidden <script> tags. When other users visit that thread, the script executes in their browsers, stealing session cookies. Thousands of users are affected before the post is removed.',
    q:'What type of attack is this?',
    opts:['Reflected XSS (Type I) — malicious code in a crafted link','Stored XSS (Type II) — malicious code saved to the server and executed for all visitors','SQL injection — database query manipulation via the input field','Buffer overflow — the script overflows the server\'s memory'],
    ans:1,
    hints:['XSS has two types. What distinguishes Reflected from Stored?','Did victims have to click a special crafted link, or did the attack run for anyone who visited the page?','The script was saved to the forum server and persisted — that\'s the key distinguishing feature.'],
-   expl:'Stored XSS (Type II). The malicious script was saved to the forum server inside the post. Every user who visits the thread triggers it automatically — no special link required. Reflected XSS (Type I) would require each victim to click a specially crafted URL that bounces the script off the server. The persistence and "any visitor is affected" behavior is the hallmark of Stored XSS.'
-  },
+   expl:'Stored XSS (Type II). The malicious script was saved to the forum server inside the post. Every user who visits the thread triggers it automatically — no special link required. Reflected XSS (Type I) would require each victim to click a specially crafted URL that bounces the script off the server. The persistence and "any visitor is affected" behavior is the hallmark of Stored XSS.'},
   {topic:'Linux permissions',
    ctx:'A file report.txt needs these permissions: the owner needs read and write; the group needs read-only; all other users get no access at all.',
    q:'Which chmod command sets this correctly?',
    opts:['chmod 640 report.txt','chmod 644 report.txt','chmod 600 report.txt','chmod 664 report.txt'],
    ans:0,
    hints:['In numeric chmod, each of the three digits = owner / group / others. Each digit is a sum: read=4, write=2, execute=1.','Owner needs read (4) + write (2) = 6. Group needs read only = 4. Others need nothing = 0.','Put those three digits together: 6, 4, 0.'],
-   expl:'chmod 640: owner=6 (read 4 + write 2), group=4 (read only), others=0 (no access). chmod 644 would give others read access. chmod 600 would deny the group read access too. chmod 664 would give the group write access. The digits always go owner → group → others, each being the sum of r(4)+w(2)+x(1).'
-  }
+   expl:'chmod 640: owner=6 (read 4 + write 2), group=4 (read only), others=0 (no access). chmod 644 would give others read access. chmod 600 would deny the group read access too. chmod 664 would give the group write access. The digits always go owner → group → others, each being the sum of r(4)+w(2)+x(1).'}
 ];
 
 function shuf(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=0|Math.random()*(i+1);[b[i],b[j]]=[b[j],b[i]];}return b;}
@@ -366,7 +319,7 @@ let fT=[],fI=0,fF=false;
 let qT=[],qI=0,qSc=0,qA=false,qSel=null,qO=[];
 let mT=[],mR=[],mSel=null,mD=new Set();
 let pI=0,pB=[],pS=[],pCk=false,pH=-1;
-let lI=0,lA=false,lSel=null,lH=-1;
+let labI=0,partI=0,pgAns=false,pgSel=null,pgH=-1,lmSel=null,lmDone=new Set(),lmRight=null;
 let sI=0,sA=false,sSel=null,sH=-1;
 
 function fil(){return tf===0?T:T.filter(x=>x.dom===tf);}
@@ -375,7 +328,8 @@ function iQ(){qT=shuf(fil());qI=0;qSc=0;qA=false;qSel=null;bQO();}
 function bQO(){if(qI>=qT.length)return;const p=fil();qO=shuf([qT[qI],...shuf(p.filter(x=>x.t!==qT[qI].t)).slice(0,3)]);}
 function iM(){const p=shuf(fil());mT=p.slice(0,Math.min(8,p.length));mR=shuf([...mT]);mSel=null;mD=new Set();}
 function iP(){const p=PARSONS[pI];pB=shuf(p.correct.map((s,i)=>({text:s,idx:i})));pS=[];pCk=false;pH=-1;}
-function iL(){lA=false;lSel=null;lH=-1;}
+function resetPart(){pgAns=false;pgSel=null;pgH=-1;lmSel=null;lmDone=new Set();lmRight=null;}
+function iL(){partI=0;resetPart();}
 function iSc(){sA=false;sSel=null;sH=-1;}
 function setMode(m){mode=m;if(m==='flash')iF();else if(m==='quiz')iQ();else if(m==='match')iM();else if(m==='parsons')iP();else if(m==='logs')iL();else if(m==='scen')iSc();render();}
 function setF(u){tf=u;if(mode==='flash')iF();else if(mode==='quiz')iQ();else if(mode==='match')iM();render();}
@@ -399,11 +353,10 @@ function nav(){
     app.appendChild(fr);
   }
 }
-
 function mkHints(hints,hI,onH){
   for(let i=0;i<=hI;i++){
     const h=mk('div',null);h.className='hint-box';
-    h.innerHTML='<span style="font-size:11px;font-weight:500;color:#BA7517;text-transform:uppercase;letter-spacing:0.05em;display:block;margin-bottom:3px;">Hint '+(i+1)+' of '+hints.length+'</span>'+hints[i];
+    h.innerHTML='<span style="font-size:11px;font-weight:500;color:#EF9F27;text-transform:uppercase;letter-spacing:0.05em;display:block;margin-bottom:3px;">Hint '+(i+1)+' of '+hints.length+'</span>'+hints[i];
     app.appendChild(h);
   }
   if(hI<hints.length-1){
@@ -411,7 +364,7 @@ function mkHints(hints,hI,onH){
     b.textContent=hI<0?'Get a hint':'Next hint';b.onclick=onH;app.appendChild(b);
   }
 }
-function mkExpl(txt){const e=mk('div',null);e.className='expl-box';e.innerHTML='<span style="font-size:11px;font-weight:500;color:#0F6E56;text-transform:uppercase;letter-spacing:0.05em;display:block;margin-bottom:4px;">Explanation</span>'+txt;app.appendChild(e);}
+function mkExpl(txt){const e=mk('div',null);e.className='expl-box';e.innerHTML='<span style="font-size:11px;font-weight:500;color:#5DCAA5;text-transform:uppercase;letter-spacing:0.05em;display:block;margin-bottom:4px;">Explanation</span>'+txt;app.appendChild(e);}
 function mkBar(pct){const w=mk('div','height:3px;background:var(--color-border-tertiary);border-radius:2px;margin-bottom:1rem;');w.appendChild(mk('div','height:100%;border-radius:2px;background:#378ADD;width:'+pct+'%;'));app.appendChild(w);}
 
 function rFlash(){
@@ -433,7 +386,6 @@ function rFlash(){
   const nx=document.createElement('button');nx.className='fbtn';nx.innerHTML='Next &#8594;';nx.onclick=()=>{if(fI<pool.length-1){fI++;fF=false;}else{fT=shuf(fil());fI=0;fF=false;}render();};
   nr.appendChild(pv);nr.appendChild(sh);nr.appendChild(nx);app.appendChild(nr);
 }
-
 function rQuiz(){
   const pool=qT;
   if(!pool.length){app.appendChild(mk('div','color:var(--color-text-secondary);','No terms.'));return;}
@@ -462,7 +414,6 @@ function rQuiz(){
   app.appendChild(card);
   if(qA){const nb=document.createElement('button');nb.className='fbtn pri';nb.style.marginTop='0.75rem';nb.textContent=qI<pool.length-1?'Next →':'See results →';nb.onclick=()=>{qI++;qA=false;qSel=null;bQO();render();};app.appendChild(nb);}
 }
-
 function rMatch(){
   if(!mT.length||mT.length<2){app.appendChild(mk('div','color:var(--color-text-secondary);','Not enough terms.'));return;}
   if(mD.size===mT.length){
@@ -495,7 +446,6 @@ function rMatch(){
   app.appendChild(mk('div','margin-top:0.75rem;font-size:12px;color:var(--color-text-tertiary);',mSel?('"'+mSel+'" selected — click its definition on the right'):'Click a term on the left, then its definition on the right.'));
   const nb=document.createElement('button');nb.className='fbtn';nb.style.marginTop='0.5rem';nb.textContent='New set';nb.onclick=()=>{iM();render();};app.appendChild(nb);
 }
-
 function rParsons(){
   const p=PARSONS[pI];
   const tabs=mk('div','display:flex;gap:6px;margin-bottom:1rem;flex-wrap:wrap;');
@@ -531,42 +481,77 @@ function rParsons(){
     else{app.appendChild(mk('div','background:var(--color-background-danger);border-left:3px solid #993C1D;padding:12px 14px;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;font-size:13px;color:var(--color-text-danger);','Red steps are out of place. Click a step to remove it and try again, or reset.'));}
   }
 }
-
-function rLogs(){
-  const log=LOGS[lI];
-  const tabs=mk('div','display:flex;gap:6px;margin-bottom:1rem;flex-wrap:wrap;');
-  LOGS.forEach((l,i)=>{const b=document.createElement('button');b.className='filt'+(lI===i?' on':'');b.textContent=l.title;b.onclick=()=>{lI=i;iL();render();};tabs.appendChild(b);});app.appendChild(tabs);
-  app.appendChild(mk('div','font-size:14px;color:var(--color-text-secondary);margin-bottom:0.75rem;line-height:1.5;',log.desc));
+function logTable(log,revealed){
   const tbl=mk('div','border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);overflow-x:auto;margin-bottom:1rem;');
   const table=document.createElement('table');table.style.cssText='width:100%;border-collapse:collapse;font-size:12px;font-family:var(--font-mono);';
   const thead=document.createElement('thead');const hrow=document.createElement('tr');hrow.style.cssText='background:var(--color-background-secondary);';
-  log.cols.forEach(c=>{const th=mk('th','padding:7px 10px;text-align:left;font-weight:500;font-size:11px;letter-spacing:0.04em;color:var(--color-text-secondary);white-space:nowrap;border-bottom:0.5px solid var(--color-border-tertiary);',c);hrow.appendChild(th);});
+  log.cols.forEach(c=>{const th=mk('th','padding:7px 9px;text-align:left;font-weight:500;font-size:11px;letter-spacing:0.03em;color:var(--color-text-secondary);white-space:nowrap;border-bottom:0.5px solid var(--color-border-tertiary);',c);hrow.appendChild(th);});
   thead.appendChild(hrow);table.appendChild(thead);
   const tbody=document.createElement('tbody');
-  log.entries.forEach((entry,i)=>{
-    const tr=document.createElement('tr');const isSus=lA&&log.sus.includes(i);
+  log.rows.forEach((row,i)=>{
+    const tr=document.createElement('tr');const isSus=revealed&&log.susRows.includes(i);
     if(isSus)tr.style.cssText='background:rgba(186,117,23,0.12);';
     else if(i%2===0)tr.style.cssText='background:var(--color-background-primary);';
     else tr.style.cssText='background:var(--color-background-secondary);';
-    [entry.t,entry.s,entry.u,entry.ip,entry.n].forEach((val,vi)=>{
-      const td=mk('td','padding:7px 10px;white-space:nowrap;border-bottom:0.5px solid var(--color-border-tertiary);',val);
-      if(vi===1){td.style.color=entry.s==='FAIL'?'var(--color-text-danger)':'var(--color-text-success)';td.style.fontWeight='500';}
+    row.forEach((val,ci)=>{
+      const td=mk('td','padding:7px 9px;white-space:nowrap;border-bottom:0.5px solid var(--color-border-tertiary);',val);
+      if(ci===log.resultCol){td.style.color=(val==='FAIL'?'var(--color-text-danger)':val==='SUCCESS'?'var(--color-text-success)':'var(--color-text-primary)');td.style.fontWeight='500';}
       if(isSus)td.style.color='#BA7517';
       tr.appendChild(td);
     });
     tbody.appendChild(tr);
   });
   table.appendChild(tbody);tbl.appendChild(table);app.appendChild(tbl);
-  app.appendChild(mk('div','font-weight:500;font-size:15px;margin-bottom:0.75rem;',log.q));
-  if(!lA){mkHints(log.hints,lH,()=>{lH++;render();});}
-  log.opts.forEach((opt,i)=>{
-    const b=document.createElement('button');b.className='opt';b.textContent=opt;
-    if(lA){if(i===log.ans)b.className+=' correct';else if(i===lSel)b.className+=' wrong';b.disabled=true;}
-    b.onclick=()=>{if(lA)return;lSel=i;lA=true;render();};app.appendChild(b);
-  });
-  if(lA){mkExpl(log.expl);if(lI<LOGS.length-1){const nb=document.createElement('button');nb.className='fbtn pri';nb.style.marginTop='0.75rem';nb.textContent='Next scenario →';nb.onclick=()=>{lI++;iL();render();};app.appendChild(nb);}}
 }
-
+function rLogs(){
+  const lab=LABS[labI];
+  const tabs=mk('div','display:flex;gap:6px;margin-bottom:1rem;flex-wrap:wrap;');
+  LABS.forEach((l,i)=>{const b=document.createElement('button');b.className='filt'+(labI===i?' on':'');b.textContent=l.tab;b.onclick=()=>{labI=i;iL();render();};tabs.appendChild(b);});app.appendChild(tabs);
+  app.appendChild(mk('div','font-size:14px;color:var(--color-text-secondary);margin-bottom:0.75rem;line-height:1.55;',lab.intro));
+  logTable(lab.log, partI>0||pgAns);
+  const part=lab.parts[partI];
+  const letter=String.fromCharCode(65+partI);
+  app.appendChild(mk('div','font-size:11px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;','Part '+letter+' of '+lab.parts.length+(part.type==='match'?' · matching':'')));
+  app.appendChild(mk('div','font-weight:500;font-size:15px;margin-bottom:0.75rem;line-height:1.45;',part.q));
+  if(part.type==='mc'){
+    if(!pgAns)mkHints(part.hints,pgH,()=>{pgH++;render();});
+    part.opts.forEach((opt,i)=>{
+      const b=document.createElement('button');b.className='opt';b.textContent=opt;
+      if(pgAns){if(i===part.ans)b.className+=' correct';else if(i===pgSel)b.className+=' wrong';b.disabled=true;}
+      b.onclick=()=>{if(pgAns)return;pgSel=i;pgAns=true;render();};app.appendChild(b);
+    });
+  } else {
+    if(!pgAns)mkHints(part.hints,pgH,()=>{pgH++;render();});
+    if(!lmRight)lmRight=shuf(part.pairs.map((p,i)=>({r:p.r,id:i})));
+    const grid=mk('div','display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:8px;');
+    const lc=mk('div'),rc=mk('div');
+    part.pairs.forEach((p,i)=>{
+      const e=document.createElement('div');e.className='mi';e.textContent=p.l;
+      if(lmDone.has(i))e.className+=' mdone';else if(lmSel===i)e.className+=' msel';
+      e.onclick=()=>{if(lmDone.has(i)||pgAns)return;lmSel=(lmSel===i)?null:i;render();};lc.appendChild(e);
+    });
+    lmRight.forEach(item=>{
+      const e=document.createElement('div');e.className='mi';e.textContent=item.r;
+      if(lmDone.has(item.id))e.className+=' mdone';
+      e.onclick=()=>{
+        if(lmSel===null||lmDone.has(item.id)||pgAns)return;
+        if(item.id===lmSel){lmDone.add(item.id);lmSel=null;if(lmDone.size===part.pairs.length)pgAns=true;render();}
+        else{e.className+=' mbad';setTimeout(()=>{if(e.classList.contains('mbad'))e.className='mi';},700);}
+      };rc.appendChild(e);
+    });
+    grid.appendChild(lc);grid.appendChild(rc);app.appendChild(grid);
+    if(!pgAns)app.appendChild(mk('div','margin-top:0.6rem;font-size:12px;color:var(--color-text-tertiary);',lmSel!==null?'Now click the matching item on the right.':'Click an item on the left, then its match on the right.'));
+  }
+  if(pgAns){
+    mkExpl(part.expl);
+    if(partI<lab.parts.length-1){
+      const nb=document.createElement('button');nb.className='fbtn pri';nb.style.marginTop='0.75rem';nb.textContent='Next part →';nb.onclick=()=>{partI++;resetPart();render();};app.appendChild(nb);
+    } else {
+      app.appendChild(mk('div','margin-top:0.75rem;background:var(--color-background-info);border-radius:var(--border-radius-md);padding:10px 14px;font-size:13px;color:var(--color-text-info);','Case complete — you worked through all '+lab.parts.length+' parts.'));
+      if(labI<LABS.length-1){const nb=document.createElement('button');nb.className='fbtn pri';nb.style.marginTop='0.6rem';nb.textContent='Next case →';nb.onclick=()=>{labI++;iL();render();};app.appendChild(nb);}
+    }
+  }
+}
 function rScen(){
   const sc=SCEN[sI];
   const pr=mk('div','display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;font-size:13px;color:var(--color-text-secondary);');
@@ -587,7 +572,6 @@ function rScen(){
     app.appendChild(nb);
   }
 }
-
 function render(){
   app.innerHTML='';nav();
   if(mode==='flash')rFlash();
@@ -597,7 +581,7 @@ function render(){
   else if(mode==='logs')rLogs();
   else if(mode==='scen')rScen();
 }
-iF();iM();iP();render();
+iF();iM();iP();iL();render();
 </script>
 </body>
 </html>
