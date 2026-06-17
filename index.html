@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP Cybersecurity — Units 4 &amp; 5 Study Suite</title>
+<style>
+:root{
+  --color-background-primary:#ffffff;
+  --color-background-secondary:#f4f2ec;
+  --color-background-tertiary:#faf9f5;
+  --color-background-info:#E6F1FB;
+  --color-background-danger:#FCEBEB;
+  --color-background-success:#E1F5EE;
+  --color-background-warning:#FAEEDA;
+  --color-text-primary:#1a1a18;
+  --color-text-secondary:#5F5E5A;
+  --color-text-tertiary:#888780;
+  --color-text-info:#185FA5;
+  --color-text-danger:#A32D2D;
+  --color-text-success:#0F6E56;
+  --color-text-warning:#854F0B;
+  --color-border-tertiary:rgba(0,0,0,0.15);
+  --color-border-secondary:rgba(0,0,0,0.30);
+  --color-border-primary:rgba(0,0,0,0.40);
+  --color-border-info:#378ADD;
+  --color-border-danger:#E24B4A;
+  --color-border-success:#1D9E75;
+  --color-border-warning:#BA7517;
+  --border-radius-md:8px;
+  --border-radius-lg:12px;
+  --font-sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --color-background-primary:#262624;
+    --color-background-secondary:#2f2f2c;
+    --color-background-tertiary:#1c1c1a;
+    --color-background-info:#042C53;
+    --color-background-danger:#501313;
+    --color-background-success:#04342C;
+    --color-background-warning:#412402;
+    --color-text-primary:#f5f4ef;
+    --color-text-secondary:#b4b2a9;
+    --color-text-tertiary:#888780;
+    --color-text-info:#85B7EB;
+    --color-text-danger:#F09595;
+    --color-text-success:#5DCAA5;
+    --color-text-warning:#EF9F27;
+    --color-border-tertiary:rgba(255,255,255,0.15);
+    --color-border-secondary:rgba(255,255,255,0.30);
+    --color-border-primary:rgba(255,255,255,0.40);
+  }
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--color-background-tertiary);color:var(--color-text-primary);font-family:var(--font-sans);line-height:1.5;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:760px;margin:0 auto;padding:2rem 1.25rem 4rem;}
+header h1{font-size:22px;font-weight:500;margin:0 0 4px;}
+header p{font-size:14px;color:var(--color-text-secondary);margin:0 0 1.5rem;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+.tab{padding:7px 13px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:transparent;cursor:pointer;font-size:12px;color:var(--color-text-secondary);font-family:var(--font-sans);white-space:nowrap;}
+.tab:hover{background:var(--color-background-secondary);}
+.tab.active{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary);font-weight:500;}
+.filt{padding:4px 10px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:transparent;cursor:pointer;font-size:12px;color:var(--color-text-secondary);font-family:var(--font-sans);}
+.filt.on{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary);}
+.fbtn{padding:7px 14px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:transparent;cursor:pointer;font-size:13px;color:var(--color-text-secondary);font-family:var(--font-sans);}
+.fbtn:hover{background:var(--color-background-secondary);}
+.fbtn.pri{background:var(--color-background-info);border-color:var(--color-border-info);color:var(--color-text-info);}
+.fbtn:disabled{opacity:0.35;cursor:default;}
+.opt{width:100%;text-align:left;padding:10px 14px;margin:5px 0;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:transparent;cursor:pointer;font-size:14px;color:var(--color-text-primary);font-family:var(--font-sans);line-height:1.5;}
+.opt:hover:not(:disabled){background:var(--color-background-secondary);}
+.opt.correct{background:var(--color-background-success);border-color:var(--color-border-success);color:var(--color-text-success);}
+.opt.wrong{background:var(--color-background-danger);border-color:var(--color-border-danger);color:var(--color-text-danger);}
+.opt:disabled{cursor:default;}
+.mi{padding:9px 12px;margin:4px 0;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);cursor:pointer;font-size:13px;color:var(--color-text-primary);line-height:1.4;font-family:var(--font-sans);}
+.mi:hover{border-color:var(--color-border-primary);}
+.mi.msel{border-color:#378ADD;background:#E6F1FB;color:#0C447C;}
+.mi.mdone{border-color:#0F6E56;background:#E1F5EE;color:#085041;cursor:default;pointer-events:none;}
+.mi.mbad{border-color:#993C1D;background:#FAECE7;color:#712B13;}
+.pstep{display:block;width:100%;text-align:left;padding:9px 12px;margin:5px 0;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);cursor:pointer;font-size:13px;color:var(--color-text-primary);font-family:var(--font-sans);line-height:1.4;}
+.pstep:hover{border-color:var(--color-border-primary);background:var(--color-background-secondary);}
+.hint-box{background:var(--color-background-warning);border-left:3px solid #BA7517;padding:10px 14px;margin-bottom:8px;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;font-size:13px;line-height:1.5;}
+.expl-box{background:var(--color-background-success);border-left:3px solid #0F6E56;padding:12px 14px;margin-top:0.75rem;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;font-size:13px;line-height:1.6;}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.5rem 1.75rem;}
+@media(prefers-color-scheme:dark){
+.mi.msel{border-color:#85B7EB;background:#042C53;color:#B5D4F4;}
+.mi.mdone{border-color:#5DCAA5;background:#04342C;color:#9FE1CB;}
+.mi.mbad{border-color:#F0997B;background:#4A1B0C;color:#F5C4B3;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>AP Cybersecurity — Units 4 &amp; 5 Study Suite</h1>
+<p>Flashcards, quiz, matching, Parsons problems, a log-analysis lab, and applied scenarios. Filter the term modes by CompTIA Security+ domain.</p>
+</header>
+<h2 class="sr-only">AP Cybersecurity study suite filtered by CompTIA Security+ domains — six interactive modes</h2>
+<div id="app"></div>
+</div>
+<script>
+const DOMAINS=[
+ {id:1,short:'Concepts',full:'Domain 1 · General security concepts'},
+ {id:2,short:'Threats & attacks',full:'Domain 2 · Threats, vulnerabilities & mitigations'},
+ {id:3,short:'Architecture',full:'Domain 3 · Security architecture'},
+ {id:4,short:'Operations',full:'Domain 4 · Security operations'},
+];
+const T=[
+  {t:'Virus',d:'Malware that must be activated by a user executing or opening a file.',dom:2},
+  {t:'Worm',d:'Spreads from one computer to another without human interaction.',dom:2},
+  {t:'Trojan',d:'Malware embedded in other software that seems harmless.',dom:2},
+  {t:'Remote access trojan (RAT)',d:'A trojan that gives an adversary remote access to the target system.',dom:2},
+  {t:'Ransomware',d:'Encrypts a device\'s files, preventing access, and demands payment for a decryption key within a time limit.',dom:2},
+  {t:'Spyware',d:'Tracks a user\'s actions and sends information back to an adversary.',dom:2},
+  {t:'Keylogger',d:'Software or hardware that logs keystrokes and sends them to the adversary — often used to steal usernames and passwords.',dom:2},
+  {t:'Logic bomb',d:'Malware set to trigger only when a specific set of conditions is met, such as a date, OS version, or character set.',dom:2},
+  {t:'Rootkit',d:'Sophisticated malware embedded in the OS that can control nearly every aspect of the system, including hiding itself from detection.',dom:2},
+  {t:'Fileless malware',d:'Malicious code that lives in RAM and uses legitimate programs already on the device rather than existing as a file.',dom:2},
+  {t:'Rainbow table',d:'A precomputed table of passwords and their corresponding hashes, sorted by hash, used to reverse-match a captured hash to its plaintext password.',dom:2},
+  {t:'Brute force attack',d:'An automated tool that tests all potential passwords a user could have.',dom:2},
+  {t:'Dictionary attack',d:'An automated tool that tests a list of common passwords.',dom:2},
+  {t:'Password spraying',d:'Attempting one common password against many different user accounts.',dom:2},
+  {t:'Credential stuffing',d:'Attempting to gain access using common default credentials or previously stolen account credentials.',dom:2},
+  {t:'Online password attack',d:'Attempts user:password combinations against an active authentication portal.',dom:2},
+  {t:'Offline password attack',d:'Runs against a captured credential database on the adversary\'s own computer, bypassing lockout protections — undetectable on the target system.',dom:2},
+  {t:'SQL injection',d:'Places SQL commands into a user-input field, breaching confidentiality (extra data returned) or integrity (data modified or deleted).',dom:2},
+  {t:'Cross-site scripting (XSS)',d:'Injecting malicious code into a website that a user\'s browser executes.',dom:2},
+  {t:'Reflected XSS (Type I)',d:'Malicious code embedded in a link the user clicks.',dom:2},
+  {t:'Stored XSS (Type II)',d:'Malicious code inserted into a website that affects every user who visits.',dom:2},
+  {t:'Buffer overflow',d:'Feeds more data into memory than the buffer allows, overflowing into adjacent memory; can crash a system or allow unauthorized code execution.',dom:2},
+  {t:'Directory traversal',d:'Modifying URLs with ../ sequences to access sensitive files outside the intended directory.',dom:2},
+  {t:'Input sanitization',d:'Removes potentially malicious characters from user input, or rejects input that doesn\'t meet expected criteria.',dom:2},
+  {t:'Salt',d:'Random bits hashed together with a password so that identical passwords produce different hashes, since each user\'s salt is unique.',dom:1},
+  {t:'Pre-image resistance',d:'A hash property: given a hash output, it is infeasible to determine the input that generated it.',dom:1},
+  {t:'Collision resistance',d:'A hash property: it is difficult to find two different inputs that produce the same hash output.',dom:1},
+  {t:'Symmetric encryption',d:'Uses the same key to encrypt and decrypt data.',dom:1},
+  {t:'Asymmetric encryption',d:'Uses two different keys — one to encrypt and a mathematically paired key to decrypt.',dom:1},
+  {t:'AES',d:'The most common symmetric algorithm; a block cipher that encrypts data in 128-bit blocks with varying key lengths.',dom:1},
+  {t:'RSA',d:'A common asymmetric algorithm used in digital signatures and digital certificates.',dom:1},
+  {t:'Principle of least privilege',d:'Entities should be given exactly as much access as needed to perform their function — no more.',dom:1},
+  {t:'Host-based firewall',d:'Software on a single device that allows or denies traffic into and out of that device, following an ACL rule set.',dom:3},
+  {t:'Data at rest',d:'Data stored on a drive; protected by encrypting the data or securing the physical drive.',dom:3},
+  {t:'Data in transit',d:'Data being sent between devices; protected by encrypting the data or the transmission medium.',dom:3},
+  {t:'Data in use',d:'Data being actively processed; must be unencrypted, so access controls govern who can view or edit it.',dom:3},
+  {t:'PII',d:'Personally identifiable information — data allowing someone to be identified (name, SSN, DOB, address, etc.). Governed by the Privacy Act and COPPA.',dom:3},
+  {t:'PHI',d:'Protected health information — data related to health, treatment, or healthcare payment, governed by HIPAA.',dom:3},
+  {t:'PCI',d:'Payment card information — card number, expiration, CVV, etc. — governed by PCI-DSS.',dom:3},
+  {t:'Knowledge factor',d:'Something the user knows — a password, PIN, or challenge question.',dom:4},
+  {t:'Possession factor',d:'Something the user has — an access card, bank card, phone, or authentication token.',dom:4},
+  {t:'Biometric factor',d:'Something the user is — fingerprint, palm print, facial recognition, iris scan, or voice ID.',dom:4},
+  {t:'Location factor',d:'Somewhere the user is — verified via Wi-Fi, GPS, time zone, or IP address.',dom:4},
+  {t:'Multifactor authentication (MFA)',d:'Using more than one authentication factor to verify identity.',dom:4},
+  {t:'Role-based access control (RBAC)',d:'Assigns subjects to roles; roles define access to objects.',dom:4},
+  {t:'Rule-based access control (RuBAC)',d:'Checks rules such as location, time of day, or device type to allow or deny access; typically layered on top of another model.',dom:4},
+  {t:'Discretionary access control (DAC)',d:'Individual subjects (owners) set access permissions for objects they own; administrators can override.',dom:4},
+  {t:'Mandatory access control (MAC)',d:'Strict rules govern access between subject levels and object levels, both assigned by an external administrator.',dom:4},
+  {t:'Bell-LaPadula model',d:'A MAC model: subjects may not read above their level, and may not write below their level — "write up, read down."',dom:4},
+  {t:'Indicator of compromise (IoC)',d:'Evidence that an adversary has compromised a device or network.',dom:4},
+  {t:'Signature-based detection',d:'Scans files and compares them against a database of known malware signatures; matches are quarantined or removed.',dom:4},
+  {t:'Anomaly-based detection',d:'Detects threats by flagging behavior that deviates from a normal baseline; more resource-intensive than signature-based detection.',dom:4},
+  {t:'Endpoint detection and response (EDR)',d:'A costly third-party service offering centralized, unified threat detection across an organization\'s devices.',dom:4},
+  {t:'Honeypot',d:'A fake file that appears to contain valuable data; any access is treated as an indicator of malicious activity.',dom:4},
+  {t:'Data loss prevention (DLP)',d:'A costly third-party service monitoring data access, usage, and transmission organization-wide.',dom:4},
+];
+
+const PARSONS=[
+  {title:'Password hashing',dom:1,
+   desc:'Arrange these steps in order: how a system safely stores a user\'s password when they create an account.',
+   correct:[
+    'User creates an account and enters a new password',
+    'System generates a unique random salt for this user',
+    'Salt is combined with the user\'s password',
+    'The combined string is processed by a cryptographic hash function',
+    'The resulting hash (not the password) and the salt are stored in the database',
+    'When the user logs in later, they enter their password again',
+    'System retrieves their stored salt, combines it with the entered password, and hashes it',
+    'The new hash is compared to the stored hash — matching hashes means the user is authenticated'
+   ],
+   hints:['What does the user do first, before the system does anything?','The salt must be created before it can be combined with anything.','Hashing only happens after salt + password are combined.','What gets stored — the password itself, or the output of the hash function?']
+  },
+  {title:'Rainbow table attack',dom:2,
+   desc:'Arrange these steps in order: how an adversary executes a rainbow table attack.',
+   correct:[
+    'Adversary steals a user:password hash database from a target organization',
+    'Adversary compiles a large list of common or likely plaintext passwords',
+    'Each candidate password is hashed using the same algorithm as the target database',
+    'A rainbow table is built pairing each plaintext password with its computed hash',
+    'The table is sorted by hash value to enable fast searching',
+    'Stolen hashes from the database are looked up in the rainbow table',
+    'Matching hash reveals the plaintext password, which is then used to log in'
+   ],
+   hints:['The adversary can\'t attack anything without data — what do they need to steal first?','The rainbow table has to be built before it can be searched.','Why would you sort the table by hash value rather than by password?']
+  },
+  {title:'SQL injection attack',dom:2,
+   desc:'Arrange these steps in order: how an SQL injection attack unfolds against a web application.',
+   correct:[
+    'Web application presents a login form with an open-ended username input field',
+    'Adversary enters SQL control characters (e.g., \' OR 1=1 --) into the username field',
+    'Application fails to validate or sanitize the input before using it',
+    'Application inserts the malicious input directly into a SQL query',
+    'Database executes the manipulated query without knowing the input was malicious',
+    'Query logic is altered — returns all records or modifies data instead of behaving as intended',
+    'Adversary gains unauthorized access to data or corrupts the database'
+   ],
+   hints:['There has to be an input field before anything can be injected into it.','The lack of data validation is what makes the attack possible — where does that failure appear in the chain?','The database just executes whatever query it receives — it doesn\'t check where the input came from.']
+  },
+  {title:'Signature detection',dom:4,
+   desc:'Arrange these steps in order: how signature-based anti-malware detects a known threat.',
+   correct:[
+    'Security researchers discover a new piece of malware in the wild',
+    'Researchers extract a unique identifier (signature) from the malware\'s code',
+    'The signature is added to the anti-malware vendor\'s signature database',
+    'An updated signature database is pushed to devices running the software',
+    'Anti-malware software periodically scans files on the device',
+    'Each file is compared against signatures in the database',
+    'If a match is found, the file is quarantined and flagged for removal'
+   ],
+   hints:['Signatures can\'t be extracted from malware that hasn\'t been found yet — what happens first?','The database update must reach the device before a scan can use the new signature.','Quarantine is the final step — it only happens after a confirmed match.']
+  }
+];
+
+const LOGS=[
+  {title:'Scenario 1',
+   desc:'You are a forensic analyst reviewing authentication logs from a corporate server. Examine the log and answer below.',
+   cols:['Time','Status','User','Source IP','Notes'],
+   entries:[
+    {t:'14:31:50',s:'SUCCESS',u:'alee',ip:'10.0.1.12',n:'—'},
+    {t:'14:32:01',s:'FAIL',u:'jsmith',ip:'203.0.113.45',n:'attempt 1'},
+    {t:'14:32:03',s:'FAIL',u:'jsmith',ip:'203.0.113.45',n:'attempt 2'},
+    {t:'14:32:05',s:'FAIL',u:'jsmith',ip:'203.0.113.45',n:'attempt 3'},
+    {t:'14:32:07',s:'FAIL',u:'jsmith',ip:'203.0.113.45',n:'attempt 4'},
+    {t:'14:32:09',s:'FAIL',u:'jsmith',ip:'203.0.113.45',n:'attempt 5'},
+    {t:'14:32:11',s:'FAIL',u:'jsmith',ip:'203.0.113.45',n:'attempt 6'},
+    {t:'14:32:13',s:'FAIL',u:'jsmith',ip:'203.0.113.45',n:'attempt 7'},
+    {t:'14:33:02',s:'SUCCESS',u:'rgarcia',ip:'10.0.1.88',n:'—'},
+   ],
+   sus:[1,2,3,4,5,6,7],
+   q:'What type of password attack do rows 2–8 indicate?',
+   opts:['Brute force / dictionary attack','Password spraying','Credential stuffing','No attack — normal login failures'],
+   ans:0,
+   hints:['Look at the username column for rows 2–8. Is it always the same person?','Now look at the source IP — is it always the same external address?','One account targeted repeatedly with many attempts from a single IP = single-account targeting.'],
+   expl:'Rows 2–8 show the same user (jsmith) failing 7 times in rapid succession from the same external IP. This is a brute force or dictionary attack — an automated tool cycling through passwords against one account. Rows 1 and 9 are normal successful logins from internal IPs.'
+  },
+  {title:'Scenario 2',
+   desc:'Review this authentication log from a company email server captured at 9:15 AM on a Monday.',
+   cols:['Time','Status','User','Source IP','Password tried'],
+   entries:[
+    {t:'09:14:58',s:'SUCCESS',u:'nwong',ip:'10.0.2.31',n:'—'},
+    {t:'09:15:00',s:'FAIL',u:'agarcia',ip:'198.51.100.22',n:'Summer2024!'},
+    {t:'09:15:02',s:'FAIL',u:'bwilson',ip:'198.51.100.22',n:'Summer2024!'},
+    {t:'09:15:04',s:'FAIL',u:'cmiller',ip:'198.51.100.22',n:'Summer2024!'},
+    {t:'09:15:06',s:'FAIL',u:'djones',ip:'198.51.100.22',n:'Summer2024!'},
+    {t:'09:15:08',s:'FAIL',u:'etaylor',ip:'198.51.100.22',n:'Summer2024!'},
+    {t:'09:15:10',s:'FAIL',u:'fmartinez',ip:'198.51.100.22',n:'Summer2024!'},
+    {t:'09:16:12',s:'SUCCESS',u:'lwebb',ip:'10.0.2.19',n:'—'},
+   ],
+   sus:[1,2,3,4,5,6],
+   q:'What type of attack does this log indicate?',
+   opts:['Brute force / dictionary attack','Password spraying','Credential stuffing','No attack — employees forgot their passwords on Monday'],
+   ans:1,
+   hints:['Look at rows 2–7. How many different usernames appear?','Now look at the "Password tried" column — what\'s identical across all failing rows?','Many different accounts, one common password, one source IP, all within seconds = ?'],
+   expl:'Rows 2–7 show six different accounts tried with the exact same password ("Summer2024!") from a single external IP in under 12 seconds. This is password spraying — trying one common seasonal password across many accounts. The attacker avoids lockout on any single account by only trying once per user.'
+  },
+  {title:'Scenario 3',
+   desc:'You are reviewing authentication logs for a set of network switches and routers at a manufacturing facility.',
+   cols:['Time','Status','User tried','Source IP','Password tried'],
+   entries:[
+    {t:'22:44:01',s:'FAIL',u:'admin',ip:'172.16.0.99',n:'admin'},
+    {t:'22:44:03',s:'FAIL',u:'admin',ip:'172.16.0.99',n:'password'},
+    {t:'22:44:05',s:'FAIL',u:'root',ip:'172.16.0.99',n:'root'},
+    {t:'22:44:07',s:'FAIL',u:'admin',ip:'172.16.0.99',n:'1234'},
+    {t:'22:44:09',s:'FAIL',u:'guest',ip:'172.16.0.99',n:'guest'},
+    {t:'22:44:11',s:'FAIL',u:'cisco',ip:'172.16.0.99',n:'cisco'},
+    {t:'22:44:13',s:'FAIL',u:'admin',ip:'172.16.0.99',n:'Admin123!'},
+    {t:'22:45:00',s:'SUCCESS',u:'sysadmin',ip:'10.0.5.2',n:'—'},
+   ],
+   sus:[0,1,2,3,4,5,6],
+   q:'What type of attack do rows 1–7 indicate?',
+   opts:['Brute force / dictionary attack','Password spraying','Credential stuffing','A legitimate admin doing routine maintenance'],
+   ans:2,
+   hints:['Look at the usernames: admin, root, guest, cisco. What do these have in common?','Now look at the passwords: admin, root, guest, cisco. See the pattern?','These are factory-default username/password pairs for network equipment.'],
+   expl:'Rows 1–7 show factory-default credential pairs (admin/admin, root/root, guest/guest, cisco/cisco) tried in rapid succession from the same IP. This is credential stuffing targeting devices that may never have had default credentials changed. Note how it differs from brute force: many different username/password combos, not many passwords for one account.'
+  },
+  {title:'Scenario 4',
+   desc:'Review the login history for user mthompson. This account normally logs in from the Seattle office (IP range 10.0.1.x) between 8–9 AM.',
+   cols:['Date/Time','Status','User','Source IP','Location'],
+   entries:[
+    {t:'Mar 13 08:22',s:'SUCCESS',u:'mthompson',ip:'10.0.1.55',n:'Seattle, US'},
+    {t:'Mar 14 08:31',s:'SUCCESS',u:'mthompson',ip:'10.0.1.55',n:'Seattle, US'},
+    {t:'Mar 14 08:45',s:'FAIL',   u:'mthompson',ip:'10.0.1.55',n:'Seattle, US'},
+    {t:'Mar 14 08:46',s:'SUCCESS',u:'mthompson',ip:'10.0.1.55',n:'Seattle, US'},
+    {t:'Mar 15 02:47',s:'SUCCESS',u:'mthompson',ip:'91.200.15.44',n:'Moscow, RU'},
+    {t:'Mar 15 09:01',s:'SUCCESS',u:'mthompson',ip:'10.0.1.55',n:'Seattle, US'},
+   ],
+   sus:[4],
+   q:'Which entry is the most suspicious, and what type of IoC does it represent?',
+   opts:[
+    'Row 3 (FAIL on Mar 14) — indicates a brute force attempt in progress',
+    'Row 5 (2:47 AM login from Moscow) — behavior-based IoC suggesting compromised credentials',
+    'Row 6 (login after Moscow) — impossible travel means both logins are fraudulent',
+    'No entry is suspicious — international travel and off-hours logins are normal'
+   ],
+   ans:1,
+   hints:['Compare the Location column. Which row is completely different from all others?','Now look at the time — 2:47 AM. How does that compare to mthompson\'s usual login window?','Unusual location + unusual time in an auth log = behavior-based IoC per 4.4.A.6.'],
+   expl:'Row 5 is the standout: a 2:47 AM login from Moscow, far outside mthompson\'s normal 8–9 AM window from Seattle. This is a behavior-based IoC — unusual login time and location — suggesting credentials may be compromised. Row 3\'s failed login followed immediately by success (row 4) is likely just a typo, not an attack.'
+  }
+];
+
+const SCEN=[
+  {topic:'Risk assessment',
+   ctx:'A water treatment plant uses embedded PLCs to control chemical dosing pumps. These PLCs are remotely accessible via username and password. The vendor has not disclosed any known CVEs for this model, and MFA is not supported by the device.',
+   q:'How would you classify the risk level of this configuration?',
+   opts:['High — critical infrastructure is always classified as high risk','Moderate — weak authentication on critical systems, but no known exploit reduces likelihood','Low — no known CVE means there is essentially no risk','Cannot be determined — embedded devices are outside the scope of risk assessment'],
+   ans:1,
+   hints:['Risk = likelihood × impact. Evaluate each dimension separately.','What is the impact if a water treatment plant\'s chemical pumps are compromised? High or low?','No known CVE means exploitation is less certain — what does that do to the likelihood component?'],
+   expl:'Moderate risk. Critical infrastructure (water treatment) means high potential impact. But the absence of a known CVE means exploitation is less certain, reducing the likelihood component. This matches the AP framework\'s illustrative example: pumps accessible via username/password without MFA = moderate risk. High risk requires both high impact AND a highly likely exploit.'
+  },
+  {topic:'Risk assessment',
+   ctx:'An organization\'s email server has not been patched in 6 months. Two months ago, a critical vulnerability (CVSS score 9.8) was published for this email server software, and security researchers confirm active exploitation in the wild.',
+   q:'How would you classify the risk level of this configuration?',
+   opts:['Low — it hasn\'t been visibly attacked yet','Moderate — the vulnerability exists but may not be discovered by adversaries','High — known critical vulnerability with active exploitation on a sensitive server','Moderate — email servers are not critical infrastructure'],
+   ans:2,
+   hints:['CVSS 9.8 is near-maximum severity. What does that imply about impact?','"Active exploitation in the wild" — is the likelihood of being attacked high or theoretical?','Email servers handle sensitive communications. Compromise = confidentiality and integrity breach.'],
+   expl:'High risk. A CVSS 9.8 CVE with confirmed active exploitation means likelihood is very high — not theoretical. Email servers store sensitive communications, so impact is also high. This matches the AP framework\'s high-risk example: an unpatched email server with a known critical vulnerability that adversaries are already using.'
+  },
+  {topic:'Malware identification',
+   ctx:'An adversary gains access to an HR system and installs software that silently records every keystroke typed by HR staff. The recorded data is automatically sent to an external server each night. HR staff notice nothing unusual.',
+   q:'What type of malware most specifically describes what was installed?',
+   opts:['Ransomware','Worm','Keylogger','Logic bomb'],
+   ans:2,
+   hints:['What is the malware\'s core action — what is it actually doing to the system?','It\'s not encrypting files, not self-replicating, and not waiting for a trigger condition.','The defining behavior is capturing and exfiltrating keystrokes.'],
+   expl:'Keylogger. The malware records keystrokes and exfiltrates them — that is the defining behavior of a keylogger. Ransomware encrypts files for ransom. A worm spreads to other computers without interaction. A logic bomb waits for a trigger condition before activating. Spyware is the broader category; keylogger is the most precise answer here.'
+  },
+  {topic:'Access control models',
+   ctx:'A government agency assigns every analyst a clearance level (e.g., SECRET). Documents are also labeled by classification level. A SECRET-cleared analyst must be able to read SECRET documents, but must NOT be allowed to copy or write data into UNCLASSIFIED documents — to prevent classified data from leaking downward.',
+   q:'Which access control model and specific rule prevents writing to lower-classification objects?',
+   opts:['DAC — the document owner sets permissions, so they could block writes','RBAC — job roles control what analysts can read and write','Bell-LaPadula — the Star (*) Security Property (no write down)','RuBAC — time-of-day rules restrict when analysts can write'],
+   ans:2,
+   hints:['The clearance levels are set by the organization, not by the document owner — which model does that rule out?','The restriction is specifically about WRITING to a LOWER level. Which model has a property for this?','Bell-LaPadula has two properties: Simple Security (no read up) and Star/(*) (no write down). Which applies here?'],
+   expl:'Bell-LaPadula\'s Star (*) Security Property: a subject may not write to an object below their clearance level. This prevents a SECRET-cleared analyst from writing classified data to UNCLASSIFIED documents. The mnemonic is "write up, read down" (WURD). DAC would rely on owner permissions, which is too flexible for government classified environments.'
+  },
+  {topic:'Application attacks',
+   ctx:'On a community forum, a user posts what appears to be a technical question. Their post contains hidden <script> tags. When other users visit that thread, the script executes in their browsers, stealing session cookies. Thousands of users are affected before the post is removed.',
+   q:'What type of attack is this?',
+   opts:['Reflected XSS (Type I) — malicious code in a crafted link','Stored XSS (Type II) — malicious code saved to the server and executed for all visitors','SQL injection — database query manipulation via the input field','Buffer overflow — the script overflows the server\'s memory'],
+   ans:1,
+   hints:['XSS has two types. What distinguishes Reflected from Stored?','Did victims have to click a special crafted link, or did the attack run for anyone who visited the page?','The script was saved to the forum server and persisted — that\'s the key distinguishing feature.'],
+   expl:'Stored XSS (Type II). The malicious script was saved to the forum server inside the post. Every user who visits the thread triggers it automatically — no special link required. Reflected XSS (Type I) would require each victim to click a specially crafted URL that bounces the script off the server. The persistence and "any visitor is affected" behavior is the hallmark of Stored XSS.'
+  },
+  {topic:'Linux permissions',
+   ctx:'A file report.txt needs these permissions: the owner needs read and write; the group needs read-only; all other users get no access at all.',
+   q:'Which chmod command sets this correctly?',
+   opts:['chmod 640 report.txt','chmod 644 report.txt','chmod 600 report.txt','chmod 664 report.txt'],
+   ans:0,
+   hints:['In numeric chmod, each of the three digits = owner / group / others. Each digit is a sum: read=4, write=2, execute=1.','Owner needs read (4) + write (2) = 6. Group needs read only = 4. Others need nothing = 0.','Put those three digits together: 6, 4, 0.'],
+   expl:'chmod 640: owner=6 (read 4 + write 2), group=4 (read only), others=0 (no access). chmod 644 would give others read access. chmod 600 would deny the group read access too. chmod 664 would give the group write access. The digits always go owner → group → others, each being the sum of r(4)+w(2)+x(1).'
+  }
+];
+
+function shuf(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=0|Math.random()*(i+1);[b[i],b[j]]=[b[j],b[i]];}return b;}
+
+let mode='flash',tf=0;
+let fT=[],fI=0,fF=false;
+let qT=[],qI=0,qSc=0,qA=false,qSel=null,qO=[];
+let mT=[],mR=[],mSel=null,mD=new Set();
+let pI=0,pB=[],pS=[],pCk=false,pH=-1;
+let lI=0,lA=false,lSel=null,lH=-1;
+let sI=0,sA=false,sSel=null,sH=-1;
+
+function fil(){return tf===0?T:T.filter(x=>x.dom===tf);}
+function iF(){fT=shuf(fil());fI=0;fF=false;}
+function iQ(){qT=shuf(fil());qI=0;qSc=0;qA=false;qSel=null;bQO();}
+function bQO(){if(qI>=qT.length)return;const p=fil();qO=shuf([qT[qI],...shuf(p.filter(x=>x.t!==qT[qI].t)).slice(0,3)]);}
+function iM(){const p=shuf(fil());mT=p.slice(0,Math.min(8,p.length));mR=shuf([...mT]);mSel=null;mD=new Set();}
+function iP(){const p=PARSONS[pI];pB=shuf(p.correct.map((s,i)=>({text:s,idx:i})));pS=[];pCk=false;pH=-1;}
+function iL(){lA=false;lSel=null;lH=-1;}
+function iSc(){sA=false;sSel=null;sH=-1;}
+function setMode(m){mode=m;if(m==='flash')iF();else if(m==='quiz')iQ();else if(m==='match')iM();else if(m==='parsons')iP();else if(m==='logs')iL();else if(m==='scen')iSc();render();}
+function setF(u){tf=u;if(mode==='flash')iF();else if(mode==='quiz')iQ();else if(mode==='match')iM();render();}
+
+const app=document.getElementById('app');
+function mk(tag,css,txt){const e=document.createElement(tag);if(css)e.style.cssText=css;if(txt!=null)e.textContent=txt;return e;}
+
+function nav(){
+  const r=mk('div','display:flex;gap:5px;overflow-x:auto;padding-bottom:2px;margin-bottom:0.75rem;flex-wrap:wrap;');
+  [['flash','Flashcards'],['quiz','Quiz'],['match','Match'],['parsons','Order steps'],['logs','Log lab'],['scen','Scenarios']].forEach(([id,label])=>{
+    const b=document.createElement('button');b.className='tab'+(mode===id?' active':'');b.textContent=label;b.onclick=()=>setMode(id);r.appendChild(b);
+  });
+  app.appendChild(r);
+  if(['flash','quiz','match'].includes(mode)){
+    const fr=mk('div','display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:1rem;');
+    fr.appendChild(mk('span','font-size:11px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.05em;margin-right:2px;','Security+ domain'));
+    const ab=document.createElement('button');ab.className='filt'+(tf===0?' on':'');ab.textContent='All';ab.title='All domains';ab.onclick=()=>setF(0);fr.appendChild(ab);
+    DOMAINS.forEach(d=>{
+      const b=document.createElement('button');b.className='filt'+(tf===d.id?' on':'');b.textContent=d.short;b.title=d.full;b.onclick=()=>setF(d.id);fr.appendChild(b);
+    });
+    app.appendChild(fr);
+  }
+}
+
+function mkHints(hints,hI,onH){
+  for(let i=0;i<=hI;i++){
+    const h=mk('div',null);h.className='hint-box';
+    h.innerHTML='<span style="font-size:11px;font-weight:500;color:#BA7517;text-transform:uppercase;letter-spacing:0.05em;display:block;margin-bottom:3px;">Hint '+(i+1)+' of '+hints.length+'</span>'+hints[i];
+    app.appendChild(h);
+  }
+  if(hI<hints.length-1){
+    const b=document.createElement('button');b.className='fbtn';b.style.marginBottom='0.75rem';
+    b.textContent=hI<0?'Get a hint':'Next hint';b.onclick=onH;app.appendChild(b);
+  }
+}
+function mkExpl(txt){const e=mk('div',null);e.className='expl-box';e.innerHTML='<span style="font-size:11px;font-weight:500;color:#0F6E56;text-transform:uppercase;letter-spacing:0.05em;display:block;margin-bottom:4px;">Explanation</span>'+txt;app.appendChild(e);}
+function mkBar(pct){const w=mk('div','height:3px;background:var(--color-border-tertiary);border-radius:2px;margin-bottom:1rem;');w.appendChild(mk('div','height:100%;border-radius:2px;background:#378ADD;width:'+pct+'%;'));app.appendChild(w);}
+
+function rFlash(){
+  const pool=fT;
+  if(!pool.length){app.appendChild(mk('div','color:var(--color-text-secondary);','No terms.'));return;}
+  const t=pool[fI];const dd=DOMAINS.find(d=>d.id===t.dom);
+  app.appendChild(mk('div','font-size:13px;color:var(--color-text-secondary);margin-bottom:5px;',(fI+1)+' of '+pool.length));
+  mkBar(Math.round(((fI+1)/pool.length)*100));
+  const card=mk('div','min-height:185px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;gap:10px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:2rem;');
+  card.appendChild(mk('div','font-size:11px;color:var(--color-text-tertiary);letter-spacing:0.06em;text-transform:uppercase;',fF?'Definition':'Term'));
+  card.appendChild(mk('div','font-size:'+(fF?'15px':'22px')+';font-weight:500;max-width:500px;line-height:1.55;',fF?t.d:t.t));
+  card.appendChild(mk('div','font-size:12px;color:var(--color-text-tertiary);margin-top:4px;',fF?'Click to flip back':'Click to reveal definition'));
+  card.onclick=()=>{fF=!fF;render();};
+  app.appendChild(card);
+  app.appendChild(mk('div','display:inline-block;margin-top:0.5rem;padding:3px 10px;border-radius:var(--border-radius-md);font-size:11px;background:var(--color-background-secondary);color:var(--color-text-secondary);','Domain '+dd.id+' · '+dd.short));
+  const nr=mk('div','display:flex;gap:8px;margin-top:0.75rem;justify-content:center;');
+  const pv=document.createElement('button');pv.className='fbtn';pv.innerHTML='&#8592; Prev';pv.disabled=fI===0;pv.onclick=()=>{fI--;fF=false;render();};
+  const sh=document.createElement('button');sh.className='fbtn';sh.innerHTML='&#8635; Shuffle';sh.onclick=()=>{fT=shuf(fil());fI=0;fF=false;render();};
+  const nx=document.createElement('button');nx.className='fbtn';nx.innerHTML='Next &#8594;';nx.onclick=()=>{if(fI<pool.length-1){fI++;fF=false;}else{fT=shuf(fil());fI=0;fF=false;}render();};
+  nr.appendChild(pv);nr.appendChild(sh);nr.appendChild(nx);app.appendChild(nr);
+}
+
+function rQuiz(){
+  const pool=qT;
+  if(!pool.length){app.appendChild(mk('div','color:var(--color-text-secondary);','No terms.'));return;}
+  if(qI>=pool.length){
+    const pct=Math.round((qSc/pool.length)*100);
+    const end=document.createElement('div');end.className='card';end.style.textAlign='center';
+    end.appendChild(mk('div','font-size:22px;font-weight:500;margin-bottom:6px;','Quiz complete'));
+    end.appendChild(mk('div','font-size:32px;font-weight:500;margin:0.5rem 0;',pct+'%'));
+    end.appendChild(mk('div','font-size:14px;color:var(--color-text-secondary);margin-bottom:1.25rem;',qSc+'/'+pool.length+' — '+(pct>=90?'excellent!':pct>=70?'good, review the misses.':'keep at it!')));
+    const rb=document.createElement('button');rb.className='fbtn pri';rb.textContent='Restart';rb.onclick=()=>{iQ();render();};end.appendChild(rb);
+    app.appendChild(end);return;
+  }
+  const t=pool[qI];
+  const pr=mk('div','display:flex;justify-content:space-between;font-size:13px;color:var(--color-text-secondary);margin-bottom:5px;');
+  pr.innerHTML='<span>Question '+(qI+1)+' of '+pool.length+'</span><span>Score: '+qSc+'</span>';app.appendChild(pr);
+  mkBar(Math.round((qI/pool.length)*100));
+  const card=document.createElement('div');card.className='card';
+  card.appendChild(mk('div','font-size:11px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;','What is...'));
+  card.appendChild(mk('div','font-size:20px;font-weight:500;margin-bottom:1.25rem;line-height:1.4;',t.t));
+  qO.forEach(opt=>{
+    const b=document.createElement('button');b.className='opt';b.textContent=opt.d;
+    if(qA){if(opt.t===t.t)b.className+=' correct';else if(opt.t===qSel)b.className+=' wrong';b.disabled=true;}
+    b.onclick=()=>{if(qA)return;qSel=opt.t;qA=true;if(opt.t===t.t)qSc++;render();};
+    card.appendChild(b);
+  });
+  app.appendChild(card);
+  if(qA){const nb=document.createElement('button');nb.className='fbtn pri';nb.style.marginTop='0.75rem';nb.textContent=qI<pool.length-1?'Next →':'See results →';nb.onclick=()=>{qI++;qA=false;qSel=null;bQO();render();};app.appendChild(nb);}
+}
+
+function rMatch(){
+  if(!mT.length||mT.length<2){app.appendChild(mk('div','color:var(--color-text-secondary);','Not enough terms.'));return;}
+  if(mD.size===mT.length){
+    const win=document.createElement('div');win.className='card';win.style.textAlign='center';
+    win.appendChild(mk('div','font-size:20px;font-weight:500;margin-bottom:8px;','All '+mT.length+' pairs matched!'));
+    win.appendChild(mk('div','font-size:14px;color:var(--color-text-secondary);margin-bottom:1.25rem;','Nice — try another set.'));
+    const b=document.createElement('button');b.className='fbtn pri';b.textContent='New set';b.onclick=()=>{iM();render();};win.appendChild(b);
+    app.appendChild(win);return;
+  }
+  const pr=mk('div','display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;font-size:13px;color:var(--color-text-secondary);');
+  pr.innerHTML='<span>Match term → definition</span><span>'+mD.size+' / '+mT.length+'</span>';app.appendChild(pr);
+  const grid=mk('div','display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:8px;');
+  const lc=mk('div'),rc=mk('div');
+  mT.forEach(item=>{
+    const e=document.createElement('div');e.className='mi';e.textContent=item.t;
+    if(mD.has(item.t))e.className+=' mdone';else if(mSel===item.t)e.className+=' msel';
+    e.onclick=()=>{if(mD.has(item.t))return;mSel=(mSel===item.t)?null:item.t;render();};lc.appendChild(e);
+  });
+  mR.forEach(item=>{
+    const sd=item.d.length>100?item.d.slice(0,97)+'…':item.d;
+    const e=document.createElement('div');e.className='mi';e.textContent=sd;
+    if(mD.has(item.t))e.className+=' mdone';
+    e.onclick=()=>{
+      if(!mSel||mD.has(item.t))return;
+      if(item.t===mSel){mD.add(item.t);mSel=null;render();}
+      else{e.className+=' mbad';setTimeout(()=>{if(e.classList.contains('mbad')){e.className='mi';}},700);}
+    };rc.appendChild(e);
+  });
+  grid.appendChild(lc);grid.appendChild(rc);app.appendChild(grid);
+  app.appendChild(mk('div','margin-top:0.75rem;font-size:12px;color:var(--color-text-tertiary);',mSel?('"'+mSel+'" selected — click its definition on the right'):'Click a term on the left, then its definition on the right.'));
+  const nb=document.createElement('button');nb.className='fbtn';nb.style.marginTop='0.5rem';nb.textContent='New set';nb.onclick=()=>{iM();render();};app.appendChild(nb);
+}
+
+function rParsons(){
+  const p=PARSONS[pI];
+  const tabs=mk('div','display:flex;gap:6px;margin-bottom:1rem;flex-wrap:wrap;');
+  PARSONS.forEach((prob,i)=>{const b=document.createElement('button');b.className='filt'+(pI===i?' on':'');b.textContent=prob.title;b.onclick=()=>{pI=i;iP();render();};tabs.appendChild(b);});app.appendChild(tabs);
+  app.appendChild(mk('div','font-size:14px;color:var(--color-text-secondary);margin-bottom:1rem;line-height:1.5;',p.desc));
+  if(pB.length>0){
+    app.appendChild(mk('div','font-size:11px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;','Step bank — click to place'));
+    const bk=mk('div','margin-bottom:1rem;');
+    pB.forEach((item,bi)=>{const b=document.createElement('button');b.className='pstep';b.textContent=item.text;b.onclick=()=>{pS.push(item);pB.splice(bi,1);pCk=false;render();};bk.appendChild(b);});app.appendChild(bk);
+  }
+  app.appendChild(mk('div','font-size:11px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;','Your sequence'));
+  const sq=mk('div','margin-bottom:1rem;');
+  if(!pS.length){sq.appendChild(mk('div','border:1px dashed var(--color-border-secondary);border-radius:var(--border-radius-md);padding:16px;text-align:center;font-size:13px;color:var(--color-text-tertiary);','Click steps from the bank above to build your sequence'));}
+  else{
+    pS.forEach((item,si)=>{
+      const row=mk('div','display:flex;align-items:flex-start;gap:10px;margin-bottom:6px;');
+      row.appendChild(mk('span','font-size:12px;font-weight:500;color:var(--color-text-tertiary);min-width:18px;padding-top:10px;',(si+1)+'.'));
+      let bg='var(--color-background-primary)',bc='var(--color-border-secondary)',tc='var(--color-text-primary)';
+      if(pCk){if(item.idx===si){bg='var(--color-background-success)';bc='var(--color-border-success)';tc='var(--color-text-success)';}else{bg='var(--color-background-danger)';bc='var(--color-border-danger)';tc='var(--color-text-danger)';}}
+      const step=mk('div','flex:1;background:'+bg+';border:0.5px solid '+bc+';color:'+tc+';border-radius:var(--border-radius-md);padding:9px 12px;font-size:13px;line-height:1.4;cursor:'+(pCk?'default':'pointer')+';');
+      step.textContent=item.text;if(!pCk){step.title='Click to remove';step.onclick=()=>{pB.push(item);pS.splice(si,1);pCk=false;render();};}
+      row.appendChild(step);sq.appendChild(row);
+    });
+  }app.appendChild(sq);
+  const ctrl=mk('div','display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem;');
+  if(pS.length===p.correct.length&&!pCk){const b=document.createElement('button');b.className='fbtn pri';b.textContent='Check my order';b.onclick=()=>{pCk=true;render();};ctrl.appendChild(b);}
+  const rb=document.createElement('button');rb.className='fbtn';rb.textContent='Reset';rb.onclick=()=>{iP();render();};ctrl.appendChild(rb);
+  app.appendChild(ctrl);
+  const allOk=pCk&&pS.every((item,i)=>item.idx===i);
+  if(!allOk){mkHints(p.hints,pH,()=>{pH++;render();});}
+  if(pCk){
+    if(allOk){app.appendChild(mk('div','background:var(--color-background-success);border-left:3px solid #0F6E56;padding:12px 14px;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;font-size:14px;color:var(--color-text-success);','All steps in the correct order — well done.'));}
+    else{app.appendChild(mk('div','background:var(--color-background-danger);border-left:3px solid #993C1D;padding:12px 14px;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;font-size:13px;color:var(--color-text-danger);','Red steps are out of place. Click a step to remove it and try again, or reset.'));}
+  }
+}
+
+function rLogs(){
+  const log=LOGS[lI];
+  const tabs=mk('div','display:flex;gap:6px;margin-bottom:1rem;flex-wrap:wrap;');
+  LOGS.forEach((l,i)=>{const b=document.createElement('button');b.className='filt'+(lI===i?' on':'');b.textContent=l.title;b.onclick=()=>{lI=i;iL();render();};tabs.appendChild(b);});app.appendChild(tabs);
+  app.appendChild(mk('div','font-size:14px;color:var(--color-text-secondary);margin-bottom:0.75rem;line-height:1.5;',log.desc));
+  const tbl=mk('div','border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);overflow-x:auto;margin-bottom:1rem;');
+  const table=document.createElement('table');table.style.cssText='width:100%;border-collapse:collapse;font-size:12px;font-family:var(--font-mono);';
+  const thead=document.createElement('thead');const hrow=document.createElement('tr');hrow.style.cssText='background:var(--color-background-secondary);';
+  log.cols.forEach(c=>{const th=mk('th','padding:7px 10px;text-align:left;font-weight:500;font-size:11px;letter-spacing:0.04em;color:var(--color-text-secondary);white-space:nowrap;border-bottom:0.5px solid var(--color-border-tertiary);',c);hrow.appendChild(th);});
+  thead.appendChild(hrow);table.appendChild(thead);
+  const tbody=document.createElement('tbody');
+  log.entries.forEach((entry,i)=>{
+    const tr=document.createElement('tr');const isSus=lA&&log.sus.includes(i);
+    if(isSus)tr.style.cssText='background:rgba(186,117,23,0.12);';
+    else if(i%2===0)tr.style.cssText='background:var(--color-background-primary);';
+    else tr.style.cssText='background:var(--color-background-secondary);';
+    [entry.t,entry.s,entry.u,entry.ip,entry.n].forEach((val,vi)=>{
+      const td=mk('td','padding:7px 10px;white-space:nowrap;border-bottom:0.5px solid var(--color-border-tertiary);',val);
+      if(vi===1){td.style.color=entry.s==='FAIL'?'var(--color-text-danger)':'var(--color-text-success)';td.style.fontWeight='500';}
+      if(isSus)td.style.color='#BA7517';
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);tbl.appendChild(table);app.appendChild(tbl);
+  app.appendChild(mk('div','font-weight:500;font-size:15px;margin-bottom:0.75rem;',log.q));
+  if(!lA){mkHints(log.hints,lH,()=>{lH++;render();});}
+  log.opts.forEach((opt,i)=>{
+    const b=document.createElement('button');b.className='opt';b.textContent=opt;
+    if(lA){if(i===log.ans)b.className+=' correct';else if(i===lSel)b.className+=' wrong';b.disabled=true;}
+    b.onclick=()=>{if(lA)return;lSel=i;lA=true;render();};app.appendChild(b);
+  });
+  if(lA){mkExpl(log.expl);if(lI<LOGS.length-1){const nb=document.createElement('button');nb.className='fbtn pri';nb.style.marginTop='0.75rem';nb.textContent='Next scenario →';nb.onclick=()=>{lI++;iL();render();};app.appendChild(nb);}}
+}
+
+function rScen(){
+  const sc=SCEN[sI];
+  const pr=mk('div','display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;font-size:13px;color:var(--color-text-secondary);');
+  pr.innerHTML='<span>Scenario '+(sI+1)+' of '+SCEN.length+'</span><span style="background:var(--color-background-secondary);padding:3px 10px;border-radius:var(--border-radius-md);font-size:12px;">'+sc.topic+'</span>';app.appendChild(pr);
+  app.appendChild(mk('div','background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:1rem 1.25rem;margin-bottom:1rem;font-size:14px;line-height:1.6;',sc.ctx));
+  app.appendChild(mk('div','font-weight:500;font-size:15px;margin-bottom:0.75rem;',sc.q));
+  if(!sA){mkHints(sc.hints,sH,()=>{sH++;render();});}
+  sc.opts.forEach((opt,i)=>{
+    const b=document.createElement('button');b.className='opt';b.textContent=opt;
+    if(sA){if(i===sc.ans)b.className+=' correct';else if(i===sSel)b.className+=' wrong';b.disabled=true;}
+    b.onclick=()=>{if(sA)return;sSel=i;sA=true;render();};app.appendChild(b);
+  });
+  if(sA){
+    mkExpl(sc.expl);
+    const nb=document.createElement('button');nb.className='fbtn pri';nb.style.marginTop='0.75rem';
+    if(sI<SCEN.length-1){nb.textContent='Next scenario →';nb.onclick=()=>{sI++;iSc();render();};}
+    else{nb.textContent='Start over';nb.onclick=()=>{sI=0;iSc();render();};}
+    app.appendChild(nb);
+  }
+}
+
+function render(){
+  app.innerHTML='';nav();
+  if(mode==='flash')rFlash();
+  else if(mode==='quiz')rQuiz();
+  else if(mode==='match')rMatch();
+  else if(mode==='parsons')rParsons();
+  else if(mode==='logs')rLogs();
+  else if(mode==='scen')rScen();
+}
+iF();iM();iP();render();
+</script>
+</body>
+</html>
